@@ -4,6 +4,8 @@
 
 A cozy palette inspired by beige machines and old terminals.
 
+**[vstrofago.github.io/comfytosh](https://vstrofago.github.io/comfytosh/)**: every port, the palette and the wallpapers.
+
 Comfytosh Theme is a colour theme in the tradition of Catppuccin, Dracula and Nord: a named palette, two flavors and ready-made ports for the editors, terminals and tools you spend your day in. Warm-tinted neutrals, low-saturation accents and nothing pure black or pure white, so the screen rests the eye and the colour does the work.
 
 ## Flavors
@@ -91,6 +93,8 @@ The full palette and every role (syntax, terminal, diff, status) are in [`palett
 
 ## Ports
 
+Each folder has a README with its install steps. The registry of every port is [`ports.json`](ports.json).
+
 | Tool | Folder |
 |---|---|
 | VS Code (and Cursor, Windsurf, VSCodium) | [`vscode/`](vscode) |
@@ -159,10 +163,16 @@ vim.cmd.colorscheme("comfytosh") -- follows vim.o.background
 
 The other ports (JetBrains, Sublime Text, Warp, tmux, Starship, bat, fzf, lazygit, btop, Obsidian) are single files: copy them to the usual place for that tool.
 
+## Contributing
+
+Comfytosh is open the way Catppuccin and Dracula are: anyone can bring it to the tool they love. Missing a tool? [Request a port](https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml), or build it with [the contributing guide](CONTRIBUTING.md): copy [`template/`](template), map the app to the roles in `palette.json`, ship both flavors and register it in `ports.json`. `python3 scripts/check_ports.py` runs the same checks as CI.
+
+The website is built from `palette.json` and `ports.json` by `scripts/build_site.py` and deploys to GitHub Pages on every push to `main`. It uses the Comfytosh design system, vendored in [`site/vendor/comfytosh/`](site/vendor/comfytosh).
+
 ## Origin
 
 Comfytosh began as a personal palette paying homage to the classic Macintosh and green-phosphor terminals. This is the universal, colour-only version.
 
 ## License
 
-Not chosen yet. Add a `LICENSE` file before publishing. The `fonts/` of the design system are not part of this repository.
+Not chosen yet. Add a `LICENSE` file before publishing. The fonts the website uses, in `site/vendor/comfytosh/fonts/`, are under the SIL Open Font License 1.1 (see `OFL.txt` there).

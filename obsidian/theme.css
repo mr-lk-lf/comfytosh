@@ -1,6 +1,7 @@
 /* Comfytosh Theme for Obsidian: do more, get comfy */
 /* Screen is used in dark mode, Case in light mode. */
 
+/* Comfytosh Screen */
 .theme-dark {
   --background-primary: #282e2b;
   --background-primary-alt: #343b37;
@@ -57,6 +58,7 @@
   --color-pink: #e594b4;
 }
 
+/* Comfytosh Case */
 .theme-light {
   --background-primary: #e3dac9;
   --background-primary-alt: #ece7de;

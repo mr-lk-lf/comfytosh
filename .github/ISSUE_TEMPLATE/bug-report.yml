@@ -1,0 +1,40 @@
+name: Bug report
+description: A colour that's hard to read, a missing scope, a broken install step.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: port
+    attributes:
+      label: Port
+      description: The folder name of the port, or "palette" or "website".
+      placeholder: kitty
+    validations:
+      required: true
+  - type: dropdown
+    id: flavor
+    attributes:
+      label: Flavor
+      options:
+        - Screen (dark)
+        - Case (light)
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong
+      description: What you expected and what you see instead. Name the colour or role if you know it.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag an image here. It helps a lot with colour problems.
+  - type: input
+    id: version
+    attributes:
+      label: Tool version and OS
+      placeholder: kitty 0.39, macOS 26

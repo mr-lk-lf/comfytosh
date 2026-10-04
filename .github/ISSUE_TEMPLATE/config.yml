@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Comfytosh Theme website
+    url: https://vstrofago.github.io/comfytosh/
+    about: Every port, the palette and the wallpapers.
+  - name: How to make a port
+    url: https://github.com/vstrofago/comfytosh/blob/main/CONTRIBUTING.md
+    about: The contributing guide.
