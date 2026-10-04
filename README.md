@@ -1,4 +1,4 @@
-<img src="site/assets/mark.svg" width="88" height="120" alt="Comfytosh: a small pixel computer">
+<img src="site/assets/mark.svg" width="120" height="144" alt="Comfytosh: a classic computer whose screen smiles with a shell prompt">
 
 # Comfytosh Theme
 
