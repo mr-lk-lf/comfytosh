@@ -6,7 +6,7 @@
 
 A cozy palette inspired by beige machines and old terminals.
 
-**[vstrofago.github.io/comfytosh](https://vstrofago.github.io/comfytosh/)**: every port, the palette and the wallpapers.
+**[vstrofago.github.io/comfytosh](https://vstrofago.github.io/comfytosh/)**: every port, the palette and the roles.
 
 Comfytosh Theme is a colour theme in the tradition of Catppuccin, Dracula and Nord: a named palette, two flavors and ready-made ports for the editors, terminals and tools you spend your day in. Warm-tinted neutrals, low-saturation accents and nothing pure black or pure white, so the screen rests the eye and the colour does the work.
 
