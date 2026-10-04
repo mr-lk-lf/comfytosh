@@ -1,0 +1,37 @@
+# Comfytosh Theme palettes for Starship
+# Add `palette = "comfytosh_screen"` (or `"comfytosh_case"`) at the top level of starship.toml,
+# paste the matching table below, and refer to the colours by name in your formats, e.g. "fg:accent bg:bg_raised".
+
+[palettes.comfytosh_screen]
+ink = "#d6e8c8"
+ink_muted = "#bac1b8"
+bg = "#282e2b"
+bg_raised = "#343b37"
+bg_sunken = "#222623"
+accent = "#ff773d"
+on_accent = "#282e2b"
+green = "#7cd3a2"
+yellow = "#e59f71"
+red = "#ff6b6b"
+blue = "#8fb3dd"
+cyan = "#7fcfd4"
+purple = "#b9a3d9"
+rose = "#e594b4"
+orange = "#ff773d"
+
+[palettes.comfytosh_case]
+ink = "#282e2b"
+ink_muted = "#4b5247"
+bg = "#e3dac9"
+bg_raised = "#ece7de"
+bg_sunken = "#c7c4bf"
+accent = "#ff773d"
+on_accent = "#282e2b"
+green = "#22643f"
+yellow = "#91491a"
+red = "#ac1a23"
+blue = "#2f5f93"
+cyan = "#1d6368"
+purple = "#6a4c97"
+rose = "#8f3558"
+orange = "#ae3400"

@@ -1,0 +1,14 @@
+[colors]
+foreground = "#d6e8c8"
+background = "#222623"
+cursor_bg = "#c5f899"
+cursor_fg = "#222623"
+cursor_border = "#c5f899"
+selection_fg = "#d6e8c8"
+selection_bg = "#364c3f"
+ansi = ["#3c4641", "#ff6b6b", "#7cd3a2", "#e8d595", "#8fb3dd", "#b9a3d9", "#7fcfd4", "#bac1b8"]
+brights = ["#7e8f85", "#ff6b6b", "#7cd3a2", "#e8d595", "#8fb3dd", "#b9a3d9", "#7fcfd4", "#d6e8c8"]
+
+[metadata]
+name = "Comfytosh Screen"
+author = "Comfytosh"

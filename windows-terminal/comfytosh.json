@@ -1,0 +1,50 @@
+{
+  "schemes": [
+    {
+      "name": "Comfytosh Screen",
+      "background": "#222623",
+      "foreground": "#d6e8c8",
+      "cursorColor": "#c5f899",
+      "selectionBackground": "#364c3f",
+      "black": "#3c4641",
+      "red": "#ff6b6b",
+      "green": "#7cd3a2",
+      "yellow": "#e8d595",
+      "blue": "#8fb3dd",
+      "purple": "#b9a3d9",
+      "cyan": "#7fcfd4",
+      "white": "#bac1b8",
+      "brightBlack": "#7e8f85",
+      "brightRed": "#ff6b6b",
+      "brightGreen": "#7cd3a2",
+      "brightYellow": "#e8d595",
+      "brightBlue": "#8fb3dd",
+      "brightPurple": "#b9a3d9",
+      "brightCyan": "#7fcfd4",
+      "brightWhite": "#d6e8c8"
+    },
+    {
+      "name": "Comfytosh Case",
+      "background": "#ece7de",
+      "foreground": "#282e2b",
+      "cursorColor": "#ae3400",
+      "selectionBackground": "#d6e8c8",
+      "black": "#282e2b",
+      "red": "#ac1a23",
+      "green": "#22643f",
+      "yellow": "#91491a",
+      "blue": "#2f5f93",
+      "purple": "#6a4c97",
+      "cyan": "#1d6368",
+      "white": "#7e8f85",
+      "brightBlack": "#4b5247",
+      "brightRed": "#ac1a23",
+      "brightGreen": "#22643f",
+      "brightYellow": "#91491a",
+      "brightBlue": "#2f5f93",
+      "brightPurple": "#6a4c97",
+      "brightCyan": "#1d6368",
+      "brightWhite": "#c7c4bf"
+    }
+  ]
+}

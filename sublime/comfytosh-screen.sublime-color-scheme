@@ -1,0 +1,148 @@
+{
+  "name": "Comfytosh Screen",
+  "author": "Comfytosh",
+  "globals": {
+    "background": "#282e2b",
+    "foreground": "#d6e8c8",
+    "caret": "#c5f899",
+    "line_highlight": "#ffffff0d",
+    "selection": "#7cd3a238",
+    "selection_foreground": "#d6e8c8",
+    "misspelling": "#ff6b6b",
+    "guide": "#3c4641",
+    "active_guide": "#7e8f85",
+    "stack_guide": "#3c4641",
+    "find_highlight": "#5d5c49",
+    "find_highlight_foreground": "#d6e8c8",
+    "gutter": "#282e2b",
+    "gutter_foreground": "#bac1b8",
+    "gutter_foreground_highlight": "#d6e8c8",
+    "brackets_options": "underline",
+    "brackets_foreground": "#ff773d",
+    "bracket_contents_options": "underline",
+    "bracket_contents_foreground": "#d6e8c8",
+    "tags_options": "underline",
+    "tags_foreground": "#ff6b6b",
+    "accent": "#ff773d"
+  },
+  "rules": [
+    {
+      "name": "Comment",
+      "scope": "comment, punctuation.definition.comment",
+      "foreground": "#bac1b8",
+      "font_style": "italic"
+    },
+    {
+      "name": "Punctuation and operators",
+      "scope": "punctuation, keyword.operator, meta.brace",
+      "foreground": "#bac1b8"
+    },
+    {
+      "name": "Keyword",
+      "scope": "keyword, storage, storage.type, storage.modifier, keyword.control, keyword.operator.new, keyword.operator.word",
+      "foreground": "#b9a3d9"
+    },
+    {
+      "name": "String",
+      "scope": "string, punctuation.definition.string",
+      "foreground": "#7cd3a2"
+    },
+    {
+      "name": "Regex",
+      "scope": "string.regexp",
+      "foreground": "#7fcfd4"
+    },
+    {
+      "name": "Escape",
+      "scope": "constant.character.escape, constant.character",
+      "foreground": "#e594b4"
+    },
+    {
+      "name": "Number",
+      "scope": "constant.numeric",
+      "foreground": "#ff773d"
+    },
+    {
+      "name": "Constant",
+      "scope": "constant.language, constant.other, support.constant, variable.other.constant",
+      "foreground": "#e594b4"
+    },
+    {
+      "name": "Function",
+      "scope": "entity.name.function, support.function, variable.function, meta.function-call",
+      "foreground": "#8fb3dd"
+    },
+    {
+      "name": "Type",
+      "scope": "entity.name.type, entity.name.class, entity.name.namespace, entity.other.inherited-class, support.type, support.class",
+      "foreground": "#e8d595"
+    },
+    {
+      "name": "Property",
+      "scope": "variable.other.property, support.type.property-name, meta.object-literal.key, entity.other.attribute-name",
+      "foreground": "#7fcfd4"
+    },
+    {
+      "name": "Tag",
+      "scope": "entity.name.tag",
+      "foreground": "#ff6b6b"
+    },
+    {
+      "name": "Variable",
+      "scope": "variable, variable.parameter",
+      "foreground": "#d6e8c8"
+    },
+    {
+      "name": "Invalid",
+      "scope": "invalid",
+      "foreground": "#ff6b6b"
+    },
+    {
+      "name": "Markdown heading",
+      "scope": "markup.heading",
+      "foreground": "#8fb3dd",
+      "font_style": "bold"
+    },
+    {
+      "name": "Markdown bold",
+      "scope": "markup.bold",
+      "font_style": "bold"
+    },
+    {
+      "name": "Markdown italic",
+      "scope": "markup.italic",
+      "font_style": "italic"
+    },
+    {
+      "name": "Markdown code",
+      "scope": "markup.raw, markup.inline.raw",
+      "foreground": "#7cd3a2"
+    },
+    {
+      "name": "Markdown link",
+      "scope": "markup.underline.link",
+      "foreground": "#ff773d"
+    },
+    {
+      "name": "Markdown quote",
+      "scope": "markup.quote",
+      "foreground": "#bac1b8",
+      "font_style": "italic"
+    },
+    {
+      "name": "Diff inserted",
+      "scope": "markup.inserted",
+      "foreground": "#7cd3a2"
+    },
+    {
+      "name": "Diff deleted",
+      "scope": "markup.deleted",
+      "foreground": "#ff6b6b"
+    },
+    {
+      "name": "Diff changed",
+      "scope": "markup.changed",
+      "foreground": "#8fb3dd"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+# Comfytosh Screen
+# Comfytosh Theme: do more, get comfy
+
+"ui.background" = { bg = "bg" }
+"ui.text" = "ink"
+"ui.text.focus" = { fg = "ink", bg = "selection" }
+"ui.text.inactive" = "ink_muted"
+"ui.virtual.whitespace" = "border_strong"
+"ui.virtual.ruler" = { bg = "bg_raised" }
+"ui.virtual.indent-guide" = "border"
+"ui.virtual.inlay-hint" = { fg = "ink_muted", bg = "bg_raised" }
+"ui.virtual.jump-label" = { fg = "accent_ink", modifiers = ["bold"] }
+"ui.cursor" = { fg = "bg", bg = "cursor" }
+"ui.cursor.primary" = { fg = "bg", bg = "cursor" }
+"ui.cursor.match" = { bg = "selection", modifiers = ["bold"] }
+"ui.selection" = { bg = "selection" }
+"ui.selection.primary" = { bg = "selection" }
+"ui.cursorline.primary" = { bg = "line_highlight" }
+"ui.cursorline.secondary" = { bg = "line_highlight" }
+"ui.linenr" = "ink_muted"
+"ui.linenr.selected" = { fg = "ink", modifiers = ["bold"] }
+"ui.gutter" = { bg = "bg" }
+"ui.statusline" = { fg = "ink_muted", bg = "bg_sunken" }
+"ui.statusline.inactive" = { fg = "ink_muted", bg = "bg_sunken" }
+"ui.statusline.normal" = { fg = "on_accent", bg = "accent", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "bg", bg = "success", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "bg", bg = "keyword", modifiers = ["bold"] }
+"ui.bufferline" = { fg = "ink_muted", bg = "bg_sunken" }
+"ui.bufferline.active" = { fg = "ink", bg = "bg", modifiers = ["bold"] }
+"ui.bufferline.background" = { bg = "bg_sunken" }
+"ui.popup" = { fg = "ink", bg = "bg_overlay" }
+"ui.popup.info" = { fg = "ink", bg = "bg_overlay" }
+"ui.window" = "border"
+"ui.help" = { fg = "ink", bg = "bg_overlay" }
+"ui.menu" = { fg = "ink", bg = "bg_overlay" }
+"ui.menu.selected" = { bg = "selection" }
+"ui.menu.scroll" = { fg = "border_strong", bg = "bg_raised" }
+"ui.highlight" = { bg = "selection" }
+
+"error" = "danger"
+"warning" = "warning"
+"info" = "info"
+"hint" = "hint"
+"diagnostic.error" = { underline = { color = "danger", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "warning", style = "curl" } }
+"diagnostic.info" = { underline = { color = "info", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "hint", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diff.plus" = "success"
+"diff.minus" = "danger"
+"diff.delta" = "info"
+
+"attribute" = "property"
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"constant" = "constant"
+"constant.numeric" = "number"
+"constant.builtin" = "constant"
+"constant.character.escape" = "constant"
+"constructor" = "type"
+"function" = "func"
+"function.macro" = "func"
+"function.builtin" = "func"
+"keyword" = "keyword"
+"label" = "constant"
+"namespace" = "type"
+"operator" = "operator"
+"punctuation" = "operator"
+"special" = "constant"
+"string" = "string"
+"string.regexp" = "property"
+"string.special" = "constant"
+"tag" = "tag"
+"type" = "type"
+"type.builtin" = "type"
+"variable" = "ink"
+"variable.builtin" = "constant"
+"variable.parameter" = "ink"
+"variable.other.member" = "property"
+"markup.heading" = { fg = "func", modifiers = ["bold"] }
+"markup.list" = "keyword"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "hint", modifiers = ["underlined"] }
+"markup.link.text" = "accent_ink"
+"markup.quote" = { fg = "comment", modifiers = ["italic"] }
+"markup.raw" = "string"
+
+[palette]
+bg = "#282e2b"
+bg_raised = "#343b37"
+bg_sunken = "#222623"
+bg_overlay = "#3c4641"
+border = "#3c4641"
+border_strong = "#7e8f85"
+ink = "#d6e8c8"
+ink_muted = "#bac1b8"
+accent = "#ff773d"
+accent_ink = "#ff773d"
+on_accent = "#282e2b"
+cursor = "#c5f899"
+selection = "#3a5245"
+line_highlight = "#333936"
+success = "#7cd3a2"
+warning = "#e59f71"
+danger = "#ff6b6b"
+info = "#8fb3dd"
+hint = "#7fcfd4"
+keyword = "#b9a3d9"
+string = "#7cd3a2"
+func = "#8fb3dd"
+type = "#e8d595"
+number = "#ff773d"
+constant = "#e594b4"
+property = "#7fcfd4"
+tag = "#ff6b6b"
+operator = "#bac1b8"
+comment = "#bac1b8"

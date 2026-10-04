@@ -1,0 +1,34 @@
+{
+  "name": "comfytosh-theme",
+  "displayName": "Comfytosh Theme",
+  "description": "A cozy palette inspired by beige machines and old terminals. do more, get comfy.",
+  "version": "0.1.0",
+  "publisher": "comfytosh",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "light",
+    "cozy",
+    "retro"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Comfytosh Screen",
+        "uiTheme": "vs-dark",
+        "path": "./themes/comfytosh-screen-color-theme.json"
+      },
+      {
+        "label": "Comfytosh Case",
+        "uiTheme": "vs",
+        "path": "./themes/comfytosh-case-color-theme.json"
+      }
+    ]
+  }
+}

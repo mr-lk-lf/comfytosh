@@ -1,0 +1,30 @@
+# Comfytosh Screen
+# Merge into ~/.config/lazygit/config.yml
+gui:
+  theme:
+    activeBorderColor:
+      - '#ff773d'
+      - bold
+    inactiveBorderColor:
+      - '#7e8f85'
+    searchingActiveBorderColor:
+      - '#e59f71'
+      - bold
+    optionsTextColor:
+      - '#8fb3dd'
+    selectedLineBgColor:
+      - '#364c3f'
+    inactiveViewSelectedLineBgColor:
+      - '#343b37'
+    cherryPickedCommitFgColor:
+      - '#8fb3dd'
+    cherryPickedCommitBgColor:
+      - '#394348'
+    markedBaseCommitFgColor:
+      - '#e59f71'
+    unstagedChangesColor:
+      - '#ff6b6b'
+    defaultFgColor:
+      - '#d6e8c8'
+  authorColors:
+    '*': '#b9a3d9'
