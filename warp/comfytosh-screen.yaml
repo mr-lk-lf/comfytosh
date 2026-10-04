@@ -1,0 +1,27 @@
+# Comfytosh Screen
+# Comfytosh Theme: do more, get comfy
+name: 'Comfytosh Screen'
+accent: '#ff773d'
+cursor: '#c5f899'
+background: '#222623'
+foreground: '#d6e8c8'
+details: darker
+terminal_colors:
+  normal:
+    black: '#3c4641'
+    red: '#ff6b6b'
+    green: '#7cd3a2'
+    yellow: '#e8d595'
+    blue: '#8fb3dd'
+    magenta: '#b9a3d9'
+    cyan: '#7fcfd4'
+    white: '#bac1b8'
+  bright:
+    black: '#7e8f85'
+    red: '#ff6b6b'
+    green: '#7cd3a2'
+    yellow: '#e8d595'
+    blue: '#8fb3dd'
+    magenta: '#b9a3d9'
+    cyan: '#7fcfd4'
+    white: '#d6e8c8'

@@ -1,0 +1,26 @@
+# Comfytosh Case
+# Comfytosh Theme: do more, get comfy
+
+accent = "#ae3400"
+cursor = "#ae3400"
+foreground = "#282e2b"
+background = "#ece7de"
+selection_foreground = "#282e2b"
+selection_background = "#d6e8c8"
+
+color0 = "#282e2b"
+color1 = "#ac1a23"
+color2 = "#22643f"
+color3 = "#91491a"
+color4 = "#2f5f93"
+color5 = "#6a4c97"
+color6 = "#1d6368"
+color7 = "#7e8f85"
+color8 = "#4b5247"
+color9 = "#ac1a23"
+color10 = "#22643f"
+color11 = "#91491a"
+color12 = "#2f5f93"
+color13 = "#6a4c97"
+color14 = "#1d6368"
+color15 = "#c7c4bf"

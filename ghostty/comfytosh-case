@@ -1,0 +1,25 @@
+# Comfytosh Case
+# Comfytosh Theme: do more, get comfy
+
+palette = 0=#282e2b
+palette = 1=#ac1a23
+palette = 2=#22643f
+palette = 3=#91491a
+palette = 4=#2f5f93
+palette = 5=#6a4c97
+palette = 6=#1d6368
+palette = 7=#7e8f85
+palette = 8=#4b5247
+palette = 9=#ac1a23
+palette = 10=#22643f
+palette = 11=#91491a
+palette = 12=#2f5f93
+palette = 13=#6a4c97
+palette = 14=#1d6368
+palette = 15=#c7c4bf
+background = #ece7de
+foreground = #282e2b
+cursor-color = #ae3400
+cursor-text = #ece7de
+selection-background = #d6e8c8
+selection-foreground = #282e2b

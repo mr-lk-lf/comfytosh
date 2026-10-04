@@ -1,0 +1,27 @@
+# Comfytosh Case
+# Comfytosh Theme: do more, get comfy
+name: 'Comfytosh Case'
+accent: '#ae3400'
+cursor: '#ae3400'
+background: '#ece7de'
+foreground: '#282e2b'
+details: lighter
+terminal_colors:
+  normal:
+    black: '#282e2b'
+    red: '#ac1a23'
+    green: '#22643f'
+    yellow: '#91491a'
+    blue: '#2f5f93'
+    magenta: '#6a4c97'
+    cyan: '#1d6368'
+    white: '#7e8f85'
+  bright:
+    black: '#4b5247'
+    red: '#ac1a23'
+    green: '#22643f'
+    yellow: '#91491a'
+    blue: '#2f5f93'
+    magenta: '#6a4c97'
+    cyan: '#1d6368'
+    white: '#c7c4bf'

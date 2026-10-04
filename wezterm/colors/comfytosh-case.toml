@@ -1,0 +1,14 @@
+[colors]
+foreground = "#282e2b"
+background = "#ece7de"
+cursor_bg = "#ae3400"
+cursor_fg = "#ece7de"
+cursor_border = "#ae3400"
+selection_fg = "#282e2b"
+selection_bg = "#d6e8c8"
+ansi = ["#282e2b", "#ac1a23", "#22643f", "#91491a", "#2f5f93", "#6a4c97", "#1d6368", "#7e8f85"]
+brights = ["#4b5247", "#ac1a23", "#22643f", "#91491a", "#2f5f93", "#6a4c97", "#1d6368", "#c7c4bf"]
+
+[metadata]
+name = "Comfytosh Case"
+author = "Comfytosh"

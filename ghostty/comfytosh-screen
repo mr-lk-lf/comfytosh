@@ -1,0 +1,25 @@
+# Comfytosh Screen
+# Comfytosh Theme: do more, get comfy
+
+palette = 0=#3c4641
+palette = 1=#ff6b6b
+palette = 2=#7cd3a2
+palette = 3=#e8d595
+palette = 4=#8fb3dd
+palette = 5=#b9a3d9
+palette = 6=#7fcfd4
+palette = 7=#bac1b8
+palette = 8=#7e8f85
+palette = 9=#ff6b6b
+palette = 10=#7cd3a2
+palette = 11=#e8d595
+palette = 12=#8fb3dd
+palette = 13=#b9a3d9
+palette = 14=#7fcfd4
+palette = 15=#d6e8c8
+background = #222623
+foreground = #d6e8c8
+cursor-color = #c5f899
+cursor-text = #222623
+selection-background = #364c3f
+selection-foreground = #d6e8c8

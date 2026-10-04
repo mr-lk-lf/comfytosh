@@ -1,0 +1,44 @@
+name: Port request
+description: Ask for Comfytosh in a tool that has no port yet, or claim one you will build.
+title: "[Port]: "
+labels: ["port request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check [ports.json](https://github.com/vstrofago/comfytosh/blob/main/ports.json) and the open issues first, so the same port isn't asked for twice.
+  - type: input
+    id: tool
+    attributes:
+      label: Tool
+      description: The app, editor, terminal or command-line tool.
+      placeholder: Zellij
+    validations:
+      required: true
+  - type: input
+    id: homepage
+    attributes:
+      label: Homepage
+      placeholder: https://zellij.dev
+    validations:
+      required: true
+  - type: input
+    id: theming-docs
+    attributes:
+      label: How the tool is themed
+      description: A link to its docs on themes or colour schemes, if you know it.
+  - type: dropdown
+    id: building
+    attributes:
+      label: Will you build it?
+      options:
+        - Yes, I'm claiming it
+        - Maybe, with some help
+        - No, I'm just asking
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Quirks of the format, other themes to look at, screenshots.

@@ -1,0 +1,116 @@
+/* Comfytosh Theme for Obsidian: do more, get comfy */
+/* Screen is used in dark mode, Case in light mode. */
+
+/* Comfytosh Screen */
+.theme-dark {
+  --background-primary: #282e2b;
+  --background-primary-alt: #343b37;
+  --background-secondary: #343b37;
+  --background-secondary-alt: #222623;
+  --background-modifier-border: #3c4641;
+  --background-modifier-border-hover: #7e8f85;
+  --background-modifier-border-focus: #7cd3a2;
+  --background-modifier-hover: #ffffff0f;
+  --background-modifier-form-field: #222623;
+  --background-modifier-error: #ff6b6b;
+  --background-modifier-success: #7cd3a2;
+  --background-modifier-message: #3c4641;
+  --text-normal: #d6e8c8;
+  --text-muted: #bac1b8;
+  --text-faint: #bac1b8;
+  --text-accent: #ff773d;
+  --text-accent-hover: #ff773d;
+  --text-on-accent: #282e2b;
+  --text-error: #ff6b6b;
+  --text-success: #7cd3a2;
+  --text-warning: #e59f71;
+  --text-highlight-bg: #e8d59547;
+  --text-selection: #7cd3a238;
+  --interactive-accent: #ff773d;
+  --interactive-accent-hover: #ff773d;
+  --interactive-normal: #343b37;
+  --interactive-hover: #3c4641;
+  --link-color: #ff773d;
+  --link-color-hover: #ff773d;
+  --link-external-color: #7fcfd4;
+  --caret-color: #c5f899;
+  --hr-color: #3c4641;
+  --blockquote-border-color: #7e8f85;
+  --code-background: #222623;
+  --code-normal: #d6e8c8;
+  --code-comment: #bac1b8;
+  --code-function: #8fb3dd;
+  --code-important: #ff773d;
+  --code-keyword: #b9a3d9;
+  --code-operator: #bac1b8;
+  --code-property: #7fcfd4;
+  --code-punctuation: #bac1b8;
+  --code-string: #7cd3a2;
+  --code-tag: #ff6b6b;
+  --code-value: #ff773d;
+  --color-red: #ff6b6b;
+  --color-orange: #ff773d;
+  --color-yellow: #e8d595;
+  --color-green: #7cd3a2;
+  --color-cyan: #7fcfd4;
+  --color-blue: #8fb3dd;
+  --color-purple: #b9a3d9;
+  --color-pink: #e594b4;
+}
+
+/* Comfytosh Case */
+.theme-light {
+  --background-primary: #e3dac9;
+  --background-primary-alt: #ece7de;
+  --background-secondary: #ece7de;
+  --background-secondary-alt: #c7c4bf;
+  --background-modifier-border: #c7c4bf;
+  --background-modifier-border-hover: #555d50;
+  --background-modifier-border-focus: #ae3400;
+  --background-modifier-hover: #282e2b0f;
+  --background-modifier-form-field: #c7c4bf;
+  --background-modifier-error: #ac1a23;
+  --background-modifier-success: #22643f;
+  --background-modifier-message: #ece7de;
+  --text-normal: #282e2b;
+  --text-muted: #4b5247;
+  --text-faint: #4b5247;
+  --text-accent: #ae3400;
+  --text-accent-hover: #ae3400;
+  --text-on-accent: #282e2b;
+  --text-error: #ac1a23;
+  --text-success: #22643f;
+  --text-warning: #91491a;
+  --text-highlight-bg: #e8d595;
+  --text-selection: #d6e8c8;
+  --interactive-accent: #ff773d;
+  --interactive-accent-hover: #ff773d;
+  --interactive-normal: #ece7de;
+  --interactive-hover: #ece7de;
+  --link-color: #ae3400;
+  --link-color-hover: #ae3400;
+  --link-external-color: #1d6368;
+  --caret-color: #ae3400;
+  --hr-color: #c7c4bf;
+  --blockquote-border-color: #555d50;
+  --code-background: #c7c4bf;
+  --code-normal: #282e2b;
+  --code-comment: #4b5247;
+  --code-function: #2f5f93;
+  --code-important: #ae3400;
+  --code-keyword: #6a4c97;
+  --code-operator: #4b5247;
+  --code-property: #1d6368;
+  --code-punctuation: #4b5247;
+  --code-string: #22643f;
+  --code-tag: #ac1a23;
+  --code-value: #ae3400;
+  --color-red: #ac1a23;
+  --color-orange: #ae3400;
+  --color-yellow: #91491a;
+  --color-green: #22643f;
+  --color-cyan: #1d6368;
+  --color-blue: #2f5f93;
+  --color-purple: #6a4c97;
+  --color-pink: #8f3558;
+}
