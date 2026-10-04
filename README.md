@@ -1,3 +1,5 @@
+<img src="site/assets/mark.svg" width="88" height="120" alt="Comfytosh: a small pixel computer">
+
 # Comfytosh Theme
 
 > do more, get comfy
@@ -175,4 +177,4 @@ Comfytosh began as a personal palette paying homage to the classic Macintosh and
 
 ## License
 
-Not chosen yet. Add a `LICENSE` file before publishing. The fonts the website uses, in `site/vendor/comfytosh/fonts/`, are under the SIL Open Font License 1.1 (see `OFL.txt` there).
+[MIT](LICENSE). The fonts the website uses, in `site/vendor/comfytosh/fonts/`, are under the SIL Open Font License 1.1 (see `OFL.txt` there).

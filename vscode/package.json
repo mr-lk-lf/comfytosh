@@ -4,6 +4,7 @@
   "description": "A cozy palette inspired by beige machines and old terminals. do more, get comfy.",
   "version": "0.1.0",
   "publisher": "comfytosh",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.80.0"
   },

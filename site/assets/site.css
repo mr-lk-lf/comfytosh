@@ -29,7 +29,7 @@ img { max-width: 100%; }
 .ct-bar { position: fixed; top: 0; left: 0; right: 0; }
 .bar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--space-6); height: 72px; max-width: 1240px; margin: 0 auto; padding: 0 var(--space-6); }
 .brand { display: inline-flex; align-items: center; gap: var(--space-3); color: var(--crt-mint); text-decoration: none; justify-self: start; }
-.brand__mark { color: var(--signal-tangerine); }
+.brand__mark { display: block; flex: none; }
 .brand__word { font: 400 26px/1 var(--font-crt); }
 :root[data-theme="carcasa"] .brand { color: var(--ink); }
 .bar__keys { display: flex; gap: var(--space-6); align-items: center; }
@@ -59,7 +59,6 @@ main { display: block; }
 .ct-key { text-decoration: none; }
 .hero__art { display: grid; justify-items: center; }
 .mac { position: relative; width: min(100%, 400px); }
-.mac__sticker { position: absolute; top: -5%; right: -9%; }
 .mac__label { position: absolute; bottom: 30%; left: -5%; }
 .mac .ct-screen__big { margin-bottom: .3em; }
 
@@ -237,7 +236,7 @@ main { display: block; }
   .desk__notebook { width: 112px; } .desk__floppy { --size: 100px; }
   .desk__label .ct-sticker { --su: 1.25px; }
   .mac { width: min(80%, 320px); }
-  .mac__sticker { --su: .7px; top: -9%; right: -10%; } .mac__label { left: -4%; }
+  .mac__label { left: -4%; }
   .chips { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
 }
 @media (prefers-reduced-motion: reduce) {
