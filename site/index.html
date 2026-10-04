@@ -59,11 +59,11 @@
     <h1 class="display">Comfytosh<br>Theme</h1>
     <p class="lede">A cozy palette inspired by beige machines and old terminals. Warm neutrals, soft accents and nothing pure black or pure white, so the screen rests the eye and the colour does the work.</p>
     <div class="hero__actions">
-      <div class="ct-keycap-well"><a class="ct-keycap ct-keycap--lg ct-keycap--2u" data-color="signal-tangerine" href="#ports"><span class="ct-keycap__face"><span class="ct-keycap__legend">get comfy</span><span class="ct-keycap__sub">↵</span></span></a></div>
       <div class="hero__keys">
         <a class="ct-key" href="downloads/comfytosh-ports.zip" download><span data-ic="download"></span>All ports (.zip)</a>
         <a class="ct-key" href="{{repo}}"><span data-ic="mark-github"></span>GitHub</a>
       </div>
+      <div class="ct-keycap-well"><a class="ct-keycap ct-keycap--lg ct-keycap--2u" data-color="signal-tangerine" href="#ports"><span class="ct-keycap__face"><span class="ct-keycap__legend">get comfy</span><span class="ct-keycap__sub">↵</span></span></a></div>
     </div>
   </div>
   <div class="hero__art">
@@ -284,19 +284,22 @@ lrwxr-xr-x  <span class="c">latest</span> -> v1
 
 </main>
 
-<!-- ── The desk: footer ────────────────────────────────── -->
-<footer class="desk">
-  <div class="ct-cutmat desk__mat">
-    <p class="desk__legend">Other stuff</p>
-    <ul class="desk__items">
-      <li><a class="ct-notebook ct-notebook--bolsillo desk__notebook" href="{{repo}}/blob/{{branch}}/CONTRIBUTING.md"><h3 class="ct-notebook__title">Port guide</h3><p class="ct-notebook__more">Read the guide</p></a></li>
-      <li><a href="{{repo}}" aria-label="GitHub, vstrofago/comfytosh"><div class="ct-floppy desk__floppy" data-color="case-graphite" data-metal="case-silver" data-band="phosphor-celadon" data-label="GitHub" data-sub="comfytosh"></div></a></li>
-      <li><a href="palette.json" download aria-label="Download palette.json"><div class="ct-floppy desk__floppy" data-band="signal-tangerine" data-label="palette" data-sub="palette.json"></div></a></li>
-      <li class="desk__label"><a href="{{repo}}/issues/new?template=port-request.yml"><span class="ct-sticker ct-sticker--rotulo ct-sticker--brillo">Request a port</span></a></li>
-      <li class="desk__label"><a href="{{repo}}/issues/new?template=bug-report.yml"><span class="ct-sticker ct-sticker--rotulo ct-sticker--pomelo">Report a bug</span></a></li>
-    </ul>
-    <p class="desk__print">Comfytosh Theme · do more, get comfy · MIT license · built with the Comfytosh design system · fonts: Geist, Geist Mono, Geist Pixel and IBM Plex Serif (SIL OFL 1.1), M PLUS Rounded 1c</p>
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <img src="assets/mark.svg" width="30" height="36" alt="">
+      <div><p class="foot__name">Comfytosh Theme</p><p class="foot__tag">do more, get comfy</p></div>
+    </div>
+    <nav class="foot__links" aria-label="Project">
+      <a href="{{repo}}/blob/{{branch}}/CONTRIBUTING.md">Contributing guide</a>
+      <a href="{{repo}}/issues/new?template=port-request.yml">Request a port</a>
+      <a href="{{repo}}/issues/new?template=bug-report.yml">Report a bug</a>
+      <a href="palette.json" download>palette.json</a>
+      <a href="{{repo}}">GitHub</a>
+    </nav>
   </div>
+  <p class="foot__print">MIT license · built with the Comfytosh design system · fonts: Geist, Geist Mono, Geist Pixel and IBM Plex Serif (SIL OFL 1.1), M PLUS Rounded 1c</p>
 </footer>
 
 <script src="vendor/comfytosh/comfytosh.js"></script>
