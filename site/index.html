@@ -58,13 +58,14 @@
     <p class="eyebrow">colour theme · 2 flavors · {{port_count}} ports</p>
     <h1 class="display">Comfytosh<br>Theme</h1>
     <p class="lede">A cozy palette inspired by beige machines and old terminals. Warm neutrals, soft accents and nothing pure black or pure white, so the screen rests the eye and the colour does the work.</p>
-    <div class="hero__actions">
-      <div class="hero__keys">
-        <a class="ct-key" href="downloads/comfytosh-ports.zip" download><span data-ic="download"></span>All ports (.zip)</a>
-        <a class="ct-key" href="{{repo}}"><span data-ic="mark-github"></span>GitHub</a>
-      </div>
-      <div class="ct-keycap-well"><a class="ct-keycap ct-keycap--lg ct-keycap--2u" data-color="signal-tangerine" href="#ports"><span class="ct-keycap__face"><span class="ct-keycap__legend">get comfy</span><span class="ct-keycap__sub">↵</span></span></a></div>
-    </div>
+    <form class="hero__find" action="#ports" role="search" id="hero-find">
+      <label class="ct-field hero__field"><span class="ct-field__label">Find your app</span><input class="ct-input" type="search" name="q" id="hero-q" placeholder="neovim, kitty, bat…" autocomplete="off" list="port-names"></label>
+      <div class="hero__enter"><button class="ct-keycap ct-keycap--275u" data-color="signal-tangerine" type="submit"><span class="ct-keycap__face"><span class="ct-keycap__legend">get comfy <span aria-hidden="true">↵</span></span></span></button></div>
+    </form>
+    <datalist id="port-names">
+<!-- @datalist -->
+    </datalist>
+    <a class="hero__sticker" href="#palette"><span class="ct-sticker ct-sticker--rotulo ct-sticker--brillo ct-sticker--izq">explore the palette ↓</span></a>
   </div>
   <div class="hero__art">
     <div class="mac">
@@ -91,7 +92,7 @@
       <p class="sub"><strong>Screen</strong> is the glass of the monitor: a dark, warm green-grey with phosphor ink. <strong>Case</strong> is the beige plastic around it, with the same hues pressed darker so every text colour still clears 4.5:1.</p>
     </div>
     <div class="flavor-pick">
-      <div class="ct-segment" role="radiogroup" aria-label="Flavor in the preview">
+      <div class="ct-segment seg-bone" role="radiogroup" aria-label="Flavor in the preview">
         <label><input type="radio" name="flavor" value="screen" checked><span>Screen</span></label>
         <label><input type="radio" name="flavor" value="case"><span>Case</span></label>
       </div>
@@ -102,11 +103,9 @@
     </div>
   </div>
 
-  <div class="ct-cutmat stage">
-    <div class="th stage__windows" data-flavor="screen" id="preview">
-      <!-- Editor: from the Comfytosh Theme design system -->
-      <figure class="win win--editor">
-        <div class="win__bar"><span class="win__close" aria-hidden="true"></span><span class="win__title">palette.ts</span></div>
+  <div class="th stage" data-flavor="screen" id="preview">
+    <figure class="mon mon--editor">
+      <div class="ct-screen-frame"><div class="ct-screen mon__screen">
         <div class="ed">
           <div class="ed__tabs"><span class="ed__tab is-on">palette.ts</span><span class="ed__tab">README.md</span></div>
           <div class="ed__code">
@@ -131,12 +130,11 @@
           </div>
           <div class="ed__stat"><span><span class="a">main*</span>  <span class="e">1 error</span>  <span class="w">1 warning</span></span><span>TypeScript  Ln 8, Col 50</span></div>
         </div>
-        <figcaption class="sr-only">A code editor in Comfytosh Theme: syntax colours, a selection, find matches, a diagnostic and a diff.</figcaption>
-      </figure>
-
-      <!-- Terminal: from the Comfytosh Theme design system -->
-      <figure class="win win--term">
-        <div class="win__bar"><span class="win__close" aria-hidden="true"></span><span class="win__title">~/theme</span></div>
+      </div></div>
+      <figcaption><span class="mon__label">editor</span> palette.ts<span class="sr-only">. A code editor in Comfytosh Theme: syntax colours, a selection, find matches, a diagnostic and a diff.</span></figcaption>
+    </figure>
+    <figure class="mon mon--term">
+      <div class="ct-screen-frame"><div class="ct-screen mon__screen">
 <pre class="term"><span class="g b">comfy@mac</span> <span class="bl">~/theme</span> <span class="m">main*</span> <span class="y">$</span> ls -l
 drwxr-xr-x  <span class="bl b">docs/</span>
 -rwxr-xr-x  <span class="g">build.sh</span>
@@ -154,9 +152,9 @@ lrwxr-xr-x  <span class="c">latest</span> -> v1
           <i style="background:var(--th-ansi-black)" title="black"></i><i style="background:var(--th-ansi-red)" title="red"></i><i style="background:var(--th-ansi-green)" title="green"></i><i style="background:var(--th-ansi-yellow)" title="yellow"></i><i style="background:var(--th-ansi-blue)" title="blue"></i><i style="background:var(--th-ansi-magenta)" title="magenta"></i><i style="background:var(--th-ansi-cyan)" title="cyan"></i><i style="background:var(--th-ansi-white)" title="white"></i>
           <i style="background:var(--th-ansi-bright-black)" title="bright black"></i><i style="background:var(--th-ansi-bright-red)" title="bright red"></i><i style="background:var(--th-ansi-bright-green)" title="bright green"></i><i style="background:var(--th-ansi-bright-yellow)" title="bright yellow"></i><i style="background:var(--th-ansi-bright-blue)" title="bright blue"></i><i style="background:var(--th-ansi-bright-magenta)" title="bright magenta"></i><i style="background:var(--th-ansi-bright-cyan)" title="bright cyan"></i><i style="background:var(--th-ansi-bright-white)" title="bright white"></i>
         </div>
-        <figcaption class="sr-only">A terminal session in Comfytosh Theme, followed by the 16 ANSI colours.</figcaption>
-      </figure>
-    </div>
+      </div></div>
+      <figcaption><span class="mon__label">terminal</span> ~/theme<span class="sr-only">. A terminal session in Comfytosh Theme, followed by the 16 ANSI colours.</span></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -166,16 +164,35 @@ lrwxr-xr-x  <span class="c">latest</span> -> v1
     <div>
       <p class="eyebrow">{{colour_count}} named colours</p>
       <h2 class="title" id="palette-title">The palette</h2>
-      <p class="sub">Seven families, each with a job. Ports use the roles in <code>palette.json</code>; the names are here for everything else. Press a key to copy its hex.</p>
+      <p class="sub">Seven families, each with a job. Ports use the roles in <code>palette.json</code>; the names are here for everything else. Press a key to copy its value, in the format you pick.</p>
     </div>
     <div class="palette-actions">
+      <div class="ct-segment seg-bone palette-format" role="radiogroup" aria-label="Colour format">
+        <label><input type="radio" name="fmt" value="hex" checked><span>HEX</span></label>
+        <label><input type="radio" name="fmt" value="rgb"><span>RGB</span></label>
+        <label><input type="radio" name="fmt" value="hsl"><span>HSL</span></label>
+      </div>
+      <div class="palette-keys">
       <button class="ct-key" type="button" data-copy-format="css"><span data-ic="copy"></span>Copy as CSS</button>
       <button class="ct-key" type="button" data-copy-format="scss"><span data-ic="copy"></span>Copy as SCSS</button>
       <a class="ct-key" href="palette.json" download><span data-ic="download"></span>palette.json</a>
+      </div>
     </div>
   </div>
   <div class="families">
 <!-- @palette -->
+  </div>
+</section>
+
+<!-- ── Roles (the spec) ─────────────────────────────────── -->
+<section class="section" id="roles" aria-labelledby="roles-title">
+  <div class="section__head">
+    <p class="eyebrow">the spec for port makers</p>
+    <h2 class="title" id="roles-title">Roles</h2>
+    <p class="sub">Every port maps the app to these {{role_count}} roles, so a string is the same green in your editor, your terminal and your prompt. Text roles clear WCAG AA (4.5:1) on their ground in both flavors; the few that don't are fills, and say so.</p>
+  </div>
+  <div class="roles">
+<!-- @roles -->
   </div>
 </section>
 
@@ -192,6 +209,7 @@ lrwxr-xr-x  <span class="c">latest</span> -> v1
 <!-- @filters -->
     </div>
   </div>
+  <p class="ports__count" id="port-count" aria-live="polite">{{port_count}} ports</p>
   <div class="ports" id="port-grid">
 <!-- @ports -->
   </div>
@@ -242,46 +260,6 @@ lrwxr-xr-x  <span class="c">latest</span> -> v1
   </div>
 </section>
 
-<!-- ── Wallpapers ───────────────────────────────────────── -->
-<section class="section" id="wallpapers" aria-labelledby="wallpapers-title">
-  <div class="section__head">
-    <p class="eyebrow">4k, desktop and phone</p>
-    <h2 class="title" id="wallpapers-title">Wallpapers</h2>
-    <p class="sub">The keycaps and the cutting mat, in the palette's greens and plastics.</p>
-  </div>
-  <div class="visor">
-    <div class="ct-screen-frame visor__frame">
-      <div class="ct-screen visor__screen" id="wall-screen" aria-live="polite">
-        <figure class="ct-slide wall is-on" data-src="wallpapers/wallpaper-desktop-4k.png" data-meta="3840 × 2160 · 3.4 MB">
-          <img src="assets/wallpapers/wallpaper-desktop.webp" alt="White, black and tangerine keycaps reading do more, get comfy, scattered on a green cutting mat over a dark gunmetal ground." width="1600" height="900">
-          <figcaption><span class="ct-slide__id">WP-01</span>keycaps · desktop</figcaption>
-        </figure>
-        <figure class="ct-slide wall" data-src="wallpapers/wallpaper-mobile-4k.png" data-meta="2160 × 3840 · 3.7 MB">
-          <img src="assets/wallpapers/wallpaper-mobile.webp" alt="The same keycaps arranged for a phone, on a portrait cutting mat." width="900" height="1600">
-          <figcaption><span class="ct-slide__id">WP-02</span>keycaps · phone</figcaption>
-        </figure>
-        <figure class="ct-slide wall" data-src="wallpapers/cutmat-desktop-4k.png" data-meta="3840 × 2160 · 8.1 MB">
-          <img src="assets/wallpapers/cutmat-desktop.webp" alt="A plain green cutting mat filling the screen, with rulers, a grid and 45 degree guides." width="1600" height="900">
-          <figcaption><span class="ct-slide__id">WP-03</span>cutting mat · desktop</figcaption>
-        </figure>
-        <figure class="ct-slide wall" data-src="wallpapers/cutmat-mobile-4k.png" data-meta="2160 × 3840 · 8.1 MB">
-          <img src="assets/wallpapers/cutmat-mobile.webp" alt="The plain cutting mat in portrait, for a phone." width="900" height="1600">
-          <figcaption><span class="ct-slide__id">WP-04</span>cutting mat · phone</figcaption>
-        </figure>
-      </div>
-      <ul class="ct-stickers">
-        <li><a href="wallpapers/wallpaper-desktop-4k.png" download id="wall-download"><span class="ct-sticker ct-sticker--rotulo ct-sticker--brillo">Download PNG</span></a></li>
-      </ul>
-    </div>
-    <div class="ct-deck">
-      <button class="ct-keycap" type="button" aria-label="Previous wallpaper" data-wall="-1"><span class="ct-keycap__face"><span data-ic="arrow-left"></span></span></button>
-      <span class="ct-deck__count" id="wall-count">01 / 04</span>
-      <button class="ct-keycap" type="button" aria-label="Next wallpaper" data-wall="1"><span class="ct-keycap__face"><span data-ic="arrow-right"></span></span></button>
-    </div>
-    <p class="visor__meta" id="wall-meta">3840 × 2160 · 3.4 MB</p>
-  </div>
-</section>
-
 </main>
 
 <!-- ── Footer ─────────────────────────────────────────── -->
@@ -291,15 +269,26 @@ lrwxr-xr-x  <span class="c">latest</span> -> v1
       <img src="assets/mark.svg" width="30" height="36" alt="">
       <div><p class="foot__name">Comfytosh Theme</p><p class="foot__tag">do more, get comfy</p></div>
     </div>
-    <nav class="foot__links" aria-label="Project">
-      <a href="{{repo}}/blob/{{branch}}/CONTRIBUTING.md">Contributing guide</a>
-      <a href="{{repo}}/issues/new?template=port-request.yml">Request a port</a>
-      <a href="{{repo}}/issues/new?template=bug-report.yml">Report a bug</a>
-      <a href="palette.json" download>palette.json</a>
-      <a href="{{repo}}">GitHub</a>
+    <nav class="foot__cols" aria-label="Footer">
+      <div><p class="foot__head">Theme</p><ul>
+        <li><a href="#flavors">Flavors</a></li><li><a href="#palette">Palette</a></li><li><a href="#roles">Roles</a></li><li><a href="#ports">Ports</a></li>
+      </ul></div>
+      <div><p class="foot__head">Contribute</p><ul>
+        <li><a href="{{repo}}/blob/{{branch}}/CONTRIBUTING.md">Contributing guide</a></li><li><a href="{{repo}}/tree/{{branch}}/template">Port template</a></li><li><a href="{{repo}}/issues/new?template=port-request.yml">Request a port</a></li><li><a href="{{repo}}/issues/new?template=bug-report.yml">Report a bug</a></li>
+      </ul></div>
+      <div><p class="foot__head">Project</p><ul>
+        <li><a href="{{repo}}">GitHub</a></li><li><a href="palette.json" download>palette.json</a></li><li><a href="ports.json">ports.json</a></li><li><a href="{{repo}}/blob/{{branch}}/LICENSE">MIT license</a></li>
+      </ul></div>
     </nav>
   </div>
-  <p class="foot__print">MIT license · built with the Comfytosh design system · fonts: Geist, Geist Mono, Geist Pixel and IBM Plex Serif (SIL OFL 1.1), M PLUS Rounded 1c</p>
+  <p class="foot__print">Built with the Comfytosh design system · fonts: Geist, Geist Mono, Geist Pixel and IBM Plex Serif (SIL OFL 1.1), M PLUS Rounded 1c</p>
+  <div class="foot__wall">
+    <picture>
+      <source media="(max-width: 640px)" srcset="assets/wallpapers/wallpaper-mobile.webp" width="1080" height="1920">
+      <img src="assets/wallpapers/wallpaper-desktop.webp" width="2400" height="1350" alt="Keycaps on a green cutting mat spelling do more, get comfy: one of the Comfytosh wallpapers." loading="lazy" decoding="async">
+    </picture>
+    <a class="ct-key foot__wallkey" href="{{repo}}/tree/{{branch}}/wallpapers"><span data-ic="download"></span>Get the wallpapers</a>
+  </div>
 </footer>
 
 <script src="vendor/comfytosh/comfytosh.js"></script>

@@ -1,4 +1,4 @@
-/* Comfytosh Theme landing: flavor switch, menu bar, palette copy, port filter, wallpaper visor. */
+/* Comfytosh Theme landing: flavor switch, menu bar, palette formats and copy, port search and filters, hero search. */
 (function () {
   'use strict';
   var root = document.documentElement;
@@ -11,6 +11,7 @@
     'copy': '<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/>',
     'book': '<path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"/>',
     'issue-opened': '<path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>',
+    'paintbrush': '<path d="M11.134 1.535c.7-.509 1.416-.942 2.076-1.155.649-.21 1.463-.267 2.069.34.603.601.568 1.411.368 2.07-.202.668-.624 1.39-1.125 2.096-1.011 1.424-2.496 2.987-3.775 4.249-1.098 1.084-2.132 1.839-3.04 2.3a3.744 3.744 0 0 1-1.055 3.217c-.431.431-1.065.691-1.657.861-.614.177-1.294.287-1.914.357A21.151 21.151 0 0 1 .797 16H.743l.007-.75H.749L.742 16a.75.75 0 0 1-.743-.742l.743-.008-.742.007v-.054a21.25 21.25 0 0 1 .13-2.284c.067-.647.187-1.287.358-1.914.17-.591.43-1.226.86-1.657a3.746 3.746 0 0 1 3.227-1.054c.466-.893 1.225-1.907 2.314-2.982 1.271-1.255 2.833-2.75 4.245-3.777ZM1.62 13.089c-.051.464-.086.929-.104 1.395.466-.018.932-.053 1.396-.104a10.511 10.511 0 0 0 1.668-.309c.526-.151.856-.325 1.011-.48a2.25 2.25 0 1 0-3.182-3.182c-.155.155-.329.485-.48 1.01a10.515 10.515 0 0 0-.309 1.67Zm10.396-10.34c-1.224.89-2.605 2.189-3.822 3.384l1.718 1.718c1.21-1.205 2.51-2.597 3.387-3.833.47-.662.78-1.227.912-1.662.134-.444.032-.551.009-.575h-.001V1.78c-.014-.014-.113-.113-.548.027-.432.14-.995.462-1.655.942Zm-4.832 7.266-.001.001a9.859 9.859 0 0 0 1.63-1.142L7.155 7.216a9.7 9.7 0 0 0-1.161 1.607c.482.302.889.71 1.19 1.192Z"/>',
     'arrow-left': '<path d="M7.78 12.53a.75.75 0 0 1-1.06 0L2.47 8.28a.75.75 0 0 1 0-1.06l4.25-4.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L4.81 7h7.44a.75.75 0 0 1 0 1.5H4.81l2.97 2.97a.75.75 0 0 1 0 1.06Z"/>'
   };
   function icon(name, size) {
@@ -80,6 +81,17 @@
   window.addEventListener('scroll', frost, { passive: true }); frost();
 
   /* ── Palette: press a key to copy its hex; copy the whole palette as CSS or SCSS ── */
+  /* Colour format for the palette keys: HEX, RGB or HSL, remembered for the visit. */
+  function setFormat(fmt) {
+    document.querySelectorAll('.chip__cap').forEach(function (cap) {
+      var v = cap.getAttribute('data-' + fmt) || cap.getAttribute('data-hex');
+      cap.setAttribute('data-copy', v);
+      var label = cap.parentNode.querySelector('.chip__hex'); if (label) label.textContent = v;
+    });
+  }
+  document.querySelectorAll('input[name="fmt"]').forEach(function (r) {
+    r.addEventListener('change', function () { if (r.checked) setFormat(r.value); });
+  });
   document.querySelectorAll('[data-copy]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var hex = btn.getAttribute('data-copy');
@@ -108,12 +120,22 @@
     });
   });
 
-  /* ── Ports: search and filter ── */
+  /* ── Ports: search, filter, a live count, and the state in the URL so a search can be shared ── */
   var search = document.getElementById('port-search');
   var pills = Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
   var tiles = Array.prototype.slice.call(document.querySelectorAll('#port-grid .port'));
   var empty = document.getElementById('port-empty');
+  var counter = document.getElementById('port-count');
+  var total = tiles.filter(function (t) { return !t.classList.contains('port--request'); }).length;
   var filter = 'all';
+  function syncUrl() {
+    try {
+      var u = new URL(location.href), q = (search && search.value || '').trim();
+      if (q) u.searchParams.set('q', q); else u.searchParams.delete('q');
+      if (filter !== 'all') u.searchParams.set('kind', filter); else u.searchParams.delete('kind');
+      history.replaceState(null, '', u.pathname + u.search + u.hash);
+    } catch (e) {}
+  }
   function applyFilter() {
     var q = (search && search.value || '').trim().toLowerCase(), shown = 0;
     tiles.forEach(function (t) {
@@ -122,47 +144,35 @@
       t.hidden = !ok; if (ok && !isRequest) shown++;
     });
     if (empty) empty.hidden = shown > 0;
+    if (counter) counter.textContent = shown === total ? total + ' ports' : shown + ' of ' + total + ' ports';
+    syncUrl();
+  }
+  function setFilter(key) {
+    filter = pills.some(function (p) { return p.getAttribute('data-filter') === key; }) ? key : 'all';
+    pills.forEach(function (o) {
+      var on = o.getAttribute('data-filter') === filter; o.setAttribute('aria-pressed', String(on));
+      o.classList.toggle('ct-pill--tangerine', on);
+    });
   }
   pills.forEach(function (p) {
-    p.addEventListener('click', function () {
-      filter = p.getAttribute('data-filter');
-      pills.forEach(function (o) {
-        var on = o === p; o.setAttribute('aria-pressed', String(on));
-        o.classList.toggle('ct-pill--tangerine', on);
-      });
-      applyFilter();
-    });
+    p.addEventListener('click', function () { setFilter(p.getAttribute('data-filter')); applyFilter(); });
   });
   if (search) search.addEventListener('input', applyFilter);
+  try {
+    var params = new URLSearchParams(location.search);
+    if (params.get('q') && search) search.value = params.get('q');
+    if (params.get('kind')) setFilter(params.get('kind'));
+    if (params.get('q') || params.get('kind')) applyFilter();
+  } catch (e) {}
 
-  /* ── Wallpapers: one at a time on the screen, two keys below ── */
-  var walls = Array.prototype.slice.call(document.querySelectorAll('.wall'));
-  var count = document.getElementById('wall-count'), meta = document.getElementById('wall-meta'), dl = document.getElementById('wall-download');
-  var at = 0;
-  function show(i) {
-    at = (i + walls.length) % walls.length;
-    walls.forEach(function (w, j) { w.classList.toggle('is-on', j === at); w.setAttribute('aria-hidden', String(j !== at)); });
-    var w = walls[at];
-    if (count) count.textContent = ('0' + (at + 1)).slice(-2) + ' / ' + ('0' + walls.length).slice(-2);
-    if (meta) meta.textContent = w.getAttribute('data-meta');
-    if (dl) dl.setAttribute('href', w.getAttribute('data-src'));
-  }
-  document.querySelectorAll('[data-wall]').forEach(function (b) {
-    b.addEventListener('click', function () { show(at + parseInt(b.getAttribute('data-wall'), 10)); });
+  /* ── Hero: type an app, press the enter key, land on its port ── */
+  var find = document.getElementById('hero-find'), heroQ = document.getElementById('hero-q');
+  if (find) find.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (search) search.value = heroQ ? heroQ.value : '';
+    setFilter('all'); applyFilter();
+    var ports = document.getElementById('ports');
+    if (ports) ports.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
-  var screen = document.getElementById('wall-screen');
-  if (screen) {
-    screen.tabIndex = 0;
-    screen.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { show(at + 1); e.preventDefault(); }
-      if (e.key === 'ArrowLeft') { show(at - 1); e.preventDefault(); }
-    });
-    var x0 = null;
-    screen.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-    screen.addEventListener('touchend', function (e) {
-      if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null;
-      if (Math.abs(dx) > 40) show(at + (dx < 0 ? 1 : -1));
-    });
-  }
-  if (walls.length) show(0);
+
 })();

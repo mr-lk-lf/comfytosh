@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 # Top-level folders that are not ports.
-NOT_PORTS = {".git", ".github", "_site", "scripts", "site", "template", "wallpapers"}
+NOT_PORTS = {".git", ".github", "_site", "docker", "scripts", "site", "template", "wallpapers"}
 REQUIRED = ("id", "name", "path", "category", "homepage", "files", "install", "maintainers")
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 SCREEN = re.compile(r"comfytosh[ _-]?screen", re.I)

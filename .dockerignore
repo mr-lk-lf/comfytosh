@@ -1,0 +1,6 @@
+.git
+.github
+_site
+wallpapers
+**/__pycache__
+*.md
