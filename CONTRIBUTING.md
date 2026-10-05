@@ -20,6 +20,7 @@ ports.json          the registry of ports: the landing page and the checks read 
 template/           the starting point for a new port
 wallpapers/         4K wallpapers
 site/               the landing page, built by scripts/build_site.py
+docker/             runs the landing page locally, with compose.yaml
 scripts/            check_ports.py (runs in CI) and build_site.py
 ```
 
@@ -114,6 +115,15 @@ Every port is derived from `palette.json`, so a change there touches all of them
 ## Fixing the landing page
 
 The page lives in `site/` and uses the Comfytosh design system, vendored in `site/vendor/comfytosh/`. Don't edit the vendored files; change `site/index.html`, `site/assets/site.css` or `site/assets/site.js`, and build with `python3 scripts/build_site.py` to check it. It deploys to GitHub Pages on every push to `main`.
+
+To see it in a browser, run it with Docker:
+
+```sh
+docker compose up --build    # then open http://localhost:8080/comfytosh/
+docker compose watch         # the same, rebuilding on every change to site/, scripts/, palette.json or ports.json
+```
+
+It runs the port checks, builds the site and serves it with nginx under `/comfytosh/`, the same path as on GitHub Pages.
 
 ## License
 

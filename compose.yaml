@@ -1,0 +1,20 @@
+# Run the Comfytosh Theme website locally:
+#   docker compose up --build      then open http://localhost:8080/comfytosh/
+#   docker compose watch           rebuilds on every change to the site, the palette or the ports
+services:
+  site:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:80"
+    develop:
+      watch:
+        - action: rebuild
+          path: ./site
+        - action: rebuild
+          path: ./scripts
+        - action: rebuild
+          path: ./palette.json
+        - action: rebuild
+          path: ./ports.json
