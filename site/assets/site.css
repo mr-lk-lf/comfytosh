@@ -53,9 +53,17 @@ main { display: block; }
 
 /* ── Hero ── */
 .hero { min-height: min(100vh, 920px); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: var(--space-12); align-items: center; padding-top: 120px; padding-bottom: var(--space-12); }
-.hero__find { display: flex; align-items: flex-end; gap: var(--space-6); margin-top: var(--space-8); max-width: 560px; }
+.hero__find { display: flex; align-items: flex-end; gap: var(--space-4); margin-top: var(--space-8); max-width: 520px; }
 .hero__field { flex: 1 1 auto; min-width: 0; }
-.hero__keys { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+.hero__enter { flex: none; }
+.hero__enter .ct-keycap { --u: 46px; }
+.hero__enter .ct-keycap__legend { font-size: 16px; white-space: nowrap; }
+.hero__sticker { display: inline-block; margin-top: var(--space-8); text-decoration: none; }
+.hero__sticker .ct-sticker { --su: 1.25px; }
+
+/* Segmented selectors in bone, the plastic of the case, with readable labels */
+.seg-bone { --case-linen: var(--case-bone); margin-bottom: 30px; }
+.seg-bone span { bottom: -24px; font: 700 12px/1 var(--font-sans); letter-spacing: .02em; color: var(--ink); }
 .ct-key { text-decoration: none; }
 .hero__art { display: grid; justify-items: center; }
 .mac { position: relative; width: min(100%, 400px); }
@@ -63,7 +71,7 @@ main { display: block; }
 .mac .ct-screen__big { margin-bottom: .3em; }
 
 /* ── Flavors stage ── */
-.flavor-pick { display: grid; gap: var(--space-4); justify-items: end; }
+.flavor-pick { display: grid; gap: var(--space-3); justify-items: end; }
 .flavor-facts { margin: 0; display: grid; gap: var(--space-1); font: 400 13px/20px var(--font-mono); color: var(--ink-muted); }
 .flavor-facts div { display: grid; grid-template-columns: 7ch auto; align-items: center; gap: var(--space-2); }
 .flavor-facts dt { color: var(--ink-muted); }

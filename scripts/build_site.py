@@ -325,16 +325,11 @@ def build(out):
         shutil.copy2(ROOT / name, out / name)
     downloads = out / "downloads"
     downloads.mkdir(exist_ok=True)
-    with zipfile.ZipFile(downloads / "comfytosh-ports.zip", "w", zipfile.ZIP_DEFLATED) as everything:
-        for port in registry["ports"]:
-            folder = ROOT / port["path"]
-            files = sorted(f for f in folder.rglob("*") if f.is_file())
-            with zipfile.ZipFile(downloads / ("comfytosh-%s.zip" % port["id"]), "w", zipfile.ZIP_DEFLATED) as one:
-                for f in files:
-                    arc = f.relative_to(ROOT).as_posix()
-                    one.write(f, arc)
-                    everything.write(f, arc)
-        everything.write(ROOT / "palette.json", "palette.json")
+    for port in registry["ports"]:
+        folder = ROOT / port["path"]
+        with zipfile.ZipFile(downloads / ("comfytosh-%s.zip" % port["id"]), "w", zipfile.ZIP_DEFLATED) as one:
+            for f in sorted(f for f in folder.rglob("*") if f.is_file()):
+                one.write(f, f.relative_to(ROOT).as_posix())
 
     page = (SITE / "index.html").read_text(encoding="utf-8")
     replacements = {

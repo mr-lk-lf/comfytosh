@@ -60,16 +60,12 @@
     <p class="lede">A cozy palette inspired by beige machines and old terminals. Warm neutrals, soft accents and nothing pure black or pure white, so the screen rests the eye and the colour does the work.</p>
     <form class="hero__find" action="#ports" role="search" id="hero-find">
       <label class="ct-field hero__field"><span class="ct-field__label">Find your app</span><input class="ct-input" type="search" name="q" id="hero-q" placeholder="neovim, kitty, bat…" autocomplete="off" list="port-names"></label>
-      <div class="ct-keycap-well"><button class="ct-keycap ct-keycap--lg ct-keycap--2u" data-color="signal-tangerine" type="submit"><span class="ct-keycap__face"><span class="ct-keycap__legend">get comfy</span><span class="ct-keycap__sub">↵</span></span></button></div>
+      <div class="hero__enter"><button class="ct-keycap ct-keycap--275u" data-color="signal-tangerine" type="submit"><span class="ct-keycap__face"><span class="ct-keycap__legend">get comfy <span aria-hidden="true">↵</span></span></span></button></div>
     </form>
     <datalist id="port-names">
 <!-- @datalist -->
     </datalist>
-    <div class="hero__keys">
-      <a class="ct-key" href="#palette"><span data-ic="paintbrush"></span>Explore the palette</a>
-      <a class="ct-key" href="downloads/comfytosh-ports.zip" download><span data-ic="download"></span>All ports (.zip)</a>
-      <a class="ct-key" href="{{repo}}"><span data-ic="mark-github"></span>GitHub</a>
-    </div>
+    <a class="hero__sticker" href="#palette"><span class="ct-sticker ct-sticker--rotulo ct-sticker--brillo ct-sticker--izq">explore the palette ↓</span></a>
   </div>
   <div class="hero__art">
     <div class="mac">
@@ -96,7 +92,7 @@
       <p class="sub"><strong>Screen</strong> is the glass of the monitor: a dark, warm green-grey with phosphor ink. <strong>Case</strong> is the beige plastic around it, with the same hues pressed darker so every text colour still clears 4.5:1.</p>
     </div>
     <div class="flavor-pick">
-      <div class="ct-segment" role="radiogroup" aria-label="Flavor in the preview">
+      <div class="ct-segment seg-bone" role="radiogroup" aria-label="Flavor in the preview">
         <label><input type="radio" name="flavor" value="screen" checked><span>Screen</span></label>
         <label><input type="radio" name="flavor" value="case"><span>Case</span></label>
       </div>
@@ -171,7 +167,7 @@ lrwxr-xr-x  <span class="c">latest</span> -> v1
       <p class="sub">Seven families, each with a job. Ports use the roles in <code>palette.json</code>; the names are here for everything else. Press a key to copy its value, in the format you pick.</p>
     </div>
     <div class="palette-actions">
-      <div class="ct-segment palette-format" role="radiogroup" aria-label="Colour format">
+      <div class="ct-segment seg-bone palette-format" role="radiogroup" aria-label="Colour format">
         <label><input type="radio" name="fmt" value="hex" checked><span>HEX</span></label>
         <label><input type="radio" name="fmt" value="rgb"><span>RGB</span></label>
         <label><input type="radio" name="fmt" value="hsl"><span>HSL</span></label>
