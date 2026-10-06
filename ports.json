@@ -1,0 +1,224 @@
+{
+  "$comment": "The registry of every Comfytosh port. The landing page and the port checks read this file. Add your port here in the same pull request that adds its folder; see CONTRIBUTING.md.",
+  "categories": {
+    "editor": "Editors",
+    "terminal": "Terminals",
+    "cli": "Command line",
+    "app": "Apps",
+    "desktop": "Desktops"
+  },
+  "ports": [
+    {
+      "id": "vscode",
+      "name": "VS Code",
+      "path": "vscode",
+      "category": "editor",
+      "homepage": "https://code.visualstudio.com",
+      "aliases": ["Cursor", "Windsurf", "VSCodium"],
+      "files": ["vscode/package.json", "vscode/themes/comfytosh-screen-color-theme.json", "vscode/themes/comfytosh-case-color-theme.json"],
+      "install": "Copy the vscode/ folder to ~/.vscode/extensions/comfytosh.comfytosh-theme-0.1.0/, restart, then run Preferences: Color Theme.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "path": "zed",
+      "category": "editor",
+      "homepage": "https://zed.dev",
+      "files": ["zed/comfytosh.json"],
+      "install": "Copy zed/comfytosh.json to ~/.config/zed/themes/, then pick Comfytosh Screen or Comfytosh Case.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "nvim",
+      "name": "Neovim",
+      "path": "nvim",
+      "category": "editor",
+      "homepage": "https://neovim.io",
+      "files": ["nvim/colors/comfytosh.lua", "nvim/colors/comfytosh-screen.lua", "nvim/colors/comfytosh-case.lua", "nvim/lua/comfytosh/init.lua", "nvim/lua/lualine/themes/comfytosh.lua"],
+      "install": "Put nvim/lua and nvim/colors in your config, then require(\"comfytosh\").setup() and vim.cmd.colorscheme(\"comfytosh\"). It follows vim.o.background.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "helix",
+      "name": "Helix",
+      "path": "helix",
+      "category": "editor",
+      "homepage": "https://helix-editor.com",
+      "files": ["helix/themes/comfytosh-screen.toml", "helix/themes/comfytosh-case.toml"],
+      "install": "Copy helix/themes/*.toml to ~/.config/helix/themes/ and set theme = \"comfytosh-screen\".",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "jetbrains",
+      "name": "JetBrains IDEs",
+      "path": "jetbrains",
+      "category": "editor",
+      "homepage": "https://www.jetbrains.com",
+      "files": ["jetbrains/comfytosh-screen.icls", "jetbrains/comfytosh-case.icls"],
+      "install": "Settings, Editor, Color Scheme, the gear icon, Import Scheme, then pick the .icls file.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "sublime",
+      "name": "Sublime Text",
+      "path": "sublime",
+      "category": "editor",
+      "homepage": "https://www.sublimetext.com",
+      "files": ["sublime/comfytosh-screen.sublime-color-scheme", "sublime/comfytosh-case.sublime-color-scheme"],
+      "install": "Copy both files to Packages/User/, then pick the scheme in Preferences, Select Color Scheme.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "ghostty",
+      "name": "Ghostty",
+      "path": "ghostty",
+      "category": "terminal",
+      "homepage": "https://ghostty.org",
+      "files": ["ghostty/comfytosh-screen", "ghostty/comfytosh-case"],
+      "install": "Copy ghostty/* to ~/.config/ghostty/themes/ and set theme = light:comfytosh-case,dark:comfytosh-screen.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "alacritty",
+      "name": "Alacritty",
+      "path": "alacritty",
+      "category": "terminal",
+      "homepage": "https://alacritty.org",
+      "files": ["alacritty/comfytosh-screen.toml", "alacritty/comfytosh-case.toml"],
+      "install": "Copy alacritty/*.toml to ~/.config/alacritty/themes/ and add it to general.import.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "kitty",
+      "name": "Kitty",
+      "path": "kitty",
+      "category": "terminal",
+      "homepage": "https://sw.kovidgoyal.net/kitty/",
+      "files": ["kitty/comfytosh-screen.conf", "kitty/comfytosh-case.conf"],
+      "install": "Copy kitty/*.conf to ~/.config/kitty/themes/ and add include themes/comfytosh-screen.conf to kitty.conf.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "wezterm",
+      "name": "WezTerm",
+      "path": "wezterm",
+      "category": "terminal",
+      "homepage": "https://wezterm.org",
+      "files": ["wezterm/colors/comfytosh-screen.toml", "wezterm/colors/comfytosh-case.toml"],
+      "install": "Copy wezterm/colors/ next to wezterm.lua, set config.color_scheme_dirs and config.color_scheme = 'Comfytosh Screen'.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "iterm2",
+      "name": "iTerm2",
+      "path": "iterm2",
+      "category": "terminal",
+      "homepage": "https://iterm2.com",
+      "files": ["iterm2/comfytosh-screen.itermcolors", "iterm2/comfytosh-case.itermcolors"],
+      "install": "Settings, Profiles, Colors, Color Presets, Import, then pick the .itermcolors file.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "windows-terminal",
+      "name": "Windows Terminal",
+      "path": "windows-terminal",
+      "category": "terminal",
+      "homepage": "https://github.com/microsoft/terminal",
+      "files": ["windows-terminal/comfytosh.json"],
+      "install": "Paste the two objects from windows-terminal/comfytosh.json into schemes in settings.json.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "warp",
+      "name": "Warp",
+      "path": "warp",
+      "category": "terminal",
+      "homepage": "https://www.warp.dev",
+      "files": ["warp/comfytosh-screen.yaml", "warp/comfytosh-case.yaml"],
+      "install": "Copy warp/*.yaml to ~/.warp/themes/, then pick the theme in Settings, Appearance, Themes.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "tmux",
+      "name": "tmux",
+      "path": "tmux",
+      "category": "cli",
+      "homepage": "https://github.com/tmux/tmux",
+      "files": ["tmux/comfytosh-screen.conf", "tmux/comfytosh-case.conf"],
+      "install": "Save the files in your config and add source-file ~/.config/tmux/comfytosh-screen.conf to tmux.conf.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "starship",
+      "name": "Starship",
+      "path": "starship",
+      "category": "cli",
+      "homepage": "https://starship.rs",
+      "files": ["starship/comfytosh.toml"],
+      "install": "Paste the palette tables into starship.toml and set palette = \"comfytosh_screen\".",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "bat",
+      "name": "bat",
+      "path": "bat",
+      "category": "cli",
+      "homepage": "https://github.com/sharkdp/bat",
+      "files": ["bat/comfytosh-screen.tmTheme", "bat/comfytosh-case.tmTheme"],
+      "install": "Copy bat/*.tmTheme to \"$(bat --config-dir)/themes\", run bat cache --build and set --theme=\"comfytosh-screen\".",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "fzf",
+      "name": "fzf",
+      "path": "fzf",
+      "category": "cli",
+      "homepage": "https://github.com/junegunn/fzf",
+      "files": ["fzf/comfytosh-screen.sh", "fzf/comfytosh-case.sh"],
+      "install": "Source fzf/comfytosh-screen.sh from your shell rc to set FZF_DEFAULT_OPTS.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "lazygit",
+      "name": "lazygit",
+      "path": "lazygit",
+      "category": "cli",
+      "homepage": "https://github.com/jesseduffield/lazygit",
+      "files": ["lazygit/comfytosh-screen.yml", "lazygit/comfytosh-case.yml"],
+      "install": "Merge the gui.theme block from lazygit/comfytosh-screen.yml into your lazygit config.yml.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "btop",
+      "name": "btop",
+      "path": "btop",
+      "category": "cli",
+      "homepage": "https://github.com/aristocratos/btop",
+      "files": ["btop/comfytosh-screen.theme", "btop/comfytosh-case.theme"],
+      "install": "Copy btop/*.theme to ~/.config/btop/themes/ and set color_theme = \"comfytosh-screen\" in btop.conf.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "path": "obsidian",
+      "category": "app",
+      "homepage": "https://obsidian.md",
+      "files": ["obsidian/manifest.json", "obsidian/theme.css"],
+      "install": "Copy the obsidian/ folder to .obsidian/themes/Comfytosh/ in your vault, then pick it under Appearance. Light mode is Case, dark mode is Screen.",
+      "maintainers": ["vstrofago"]
+    },
+    {
+      "id": "omarchy",
+      "name": "Omarchy",
+      "path": "omarchy",
+      "category": "desktop",
+      "homepage": "https://omarchy.org",
+      "files": ["omarchy/comfytosh-screen/colors.toml", "omarchy/comfytosh-case/colors.toml"],
+      "install": "Copy omarchy/comfytosh-screen and omarchy/comfytosh-case to ~/.config/omarchy/themes/, then omarchy-theme-set comfytosh-screen.",
+      "maintainers": ["vstrofago"]
+    }
+  ],
+  "wanted": ["Vim", "Emacs", "Xcode", "Zellij", "Slack", "Discord", "Firefox", "Chrome", "Raycast", "Hyprland", "Waybar", "GNOME Terminal", "Konsole", "Foot", "Rofi", "Spotify"]
+}

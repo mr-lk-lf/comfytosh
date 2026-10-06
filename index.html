@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en" data-theme="pantalla">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comfytosh Theme</title>
+<meta name="description" content="A cozy colour theme inspired by beige machines and old terminals. Two flavors, 21 ports for editors, terminals and the command line. do more, get comfy.">
+<meta name="theme-color" content="#282e2b">
+<meta property="og:title" content="Comfytosh Theme">
+<meta property="og:description" content="A cozy palette inspired by beige machines and old terminals. do more, get comfy.">
+<meta property="og:image" content="assets/wallpapers/wallpaper-desktop.webp">
+<link rel="apple-touch-icon" href="assets/mark.svg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>
+  /* Pick the flavor before the first paint: a saved choice, else the system's. */
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('comfytosh-flavor'); } catch (e) {}
+    if (t !== 'pantalla' && t !== 'carcasa') t = matchMedia('(prefers-color-scheme: light)').matches ? 'carcasa' : 'pantalla';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="vendor/comfytosh/tokens.css">
+<link rel="stylesheet" href="vendor/comfytosh/comfytosh.css">
+<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="ct-root">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="ct-bar" data-nav>
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="Comfytosh Theme, back to top">
+      <svg class="brand__mark" viewBox="0 0 15 18" width="30" height="36" shape-rendering="crispEdges" aria-hidden="true"><path fill="#282e2b" d="M1 0h13v1H1zM0 1h1v1H0zM14 1h1v1H14zM0 2h1v1H0zM2 2h11v1H2zM14 2h1v1H14zM0 3h1v1H0zM2 3h1v1H2zM12 3h1v1H12zM14 3h1v1H14zM0 4h1v1H0zM2 4h1v1H2zM12 4h1v1H12zM14 4h1v1H14zM0 5h1v1H0zM2 5h1v1H2zM12 5h1v1H12zM14 5h1v1H14zM0 6h1v1H0zM2 6h1v1H2zM12 6h1v1H12zM14 6h1v1H14zM0 7h1v1H0zM2 7h1v1H2zM12 7h1v1H12zM14 7h1v1H14zM0 8h1v1H0zM2 8h1v1H2zM12 8h1v1H12zM14 8h1v1H14zM0 9h1v1H0zM2 9h1v1H2zM12 9h1v1H12zM14 9h1v1H14zM0 10h1v1H0zM2 10h11v1H2zM14 10h1v1H14zM0 11h1v1H0zM14 11h1v1H14zM0 12h1v1H0zM14 12h1v1H14zM0 13h1v1H0zM14 13h1v1H14zM0 14h1v1H0zM14 14h1v1H14zM0 15h1v1H0zM14 15h1v1H14zM1 16h1v1H1zM13 16h1v1H13zM1 17h13v1H1z"/><path fill="#e3dac9" d="M1 1h12v1H1zM1 2h1v1H1zM1 3h1v1H1zM1 4h1v1H1zM1 5h1v1H1zM1 6h1v1H1zM1 7h1v1H1zM1 8h1v1H1zM1 9h1v1H1zM1 10h1v1H1zM1 11h12v1H1zM1 12h12v1H1zM1 13h7v1H1zM12 13h1v1H12zM1 14h12v1H1z"/><path fill="#c7c4bf" d="M13 1h1v1H13zM13 2h1v1H13zM13 3h1v1H13zM13 4h1v1H13zM13 5h1v1H13zM13 6h1v1H13zM13 7h1v1H13zM13 8h1v1H13zM13 9h1v1H13zM13 10h1v1H13zM13 11h1v1H13zM13 12h1v1H13zM13 13h1v1H13zM13 14h1v1H13zM1 15h13v1H1zM2 16h11v1H2z"/><path fill="#222623" d="M3 3h9v1H3zM3 4h2v1H3zM6 4h3v1H6zM10 4h2v1H10zM3 5h3v1H3zM7 5h2v1H7zM10 5h2v1H10zM3 6h2v1H3zM6 6h6v1H6zM3 7h9v1H3zM3 8h2v1H3zM6 8h4v1H6zM11 8h1v1H11zM3 9h3v1H3zM10 9h2v1H10zM8 13h3v1H8z"/><path fill="#7cd3a2" d="M5 4h1v1H5zM9 4h1v1H9zM6 5h1v1H6zM9 5h1v1H9zM5 6h1v1H5z"/><path fill="#c5f899" d="M5 8h1v1H5zM10 8h1v1H10zM6 9h4v1H6z"/><path fill="#ff773d" d="M11 13h1v1H11z"/></svg>
+      <span class="brand__word">comfytosh</span>
+    </a>
+    <nav class="bar__keys" aria-label="Sections">
+      <a class="ct-keycap" data-color="signal-tangerine" style="--w:1.9" href="#palette"><span class="ct-keycap__face"><span class="ct-keycap__legend">palette</span></span></a>
+      <a class="ct-keycap" data-color="case-graphite" style="--w:1.6" href="#ports"><span class="ct-keycap__face"><span class="ct-keycap__legend">ports</span></span></a>
+      <a class="ct-keycap" data-color="case-bone" style="--w:2.3" href="#contribute"><span class="ct-keycap__face"><span class="ct-keycap__legend">contribute</span></span></a>
+    </nav>
+    <div class="bar__end">
+      <a class="bar__gh" href="https://github.com/vstrofago/comfytosh" aria-label="Comfytosh on GitHub"><span data-ic="mark-github"></span></a>
+      <label class="ct-switch ct-switch--icons theme-switch" data-tip="Screen or Case">
+        <input class="ct-switch__input" type="checkbox" id="flavor-switch" aria-label="Dark flavor (Screen)"><span class="ct-switch__track"></span>
+      </label>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ── Hero ─────────────────────────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero__words">
+    <p class="eyebrow">colour theme · 2 flavors · 21 ports</p>
+    <h1 class="display">Comfytosh<br>Theme</h1>
+    <p class="lede">A cozy palette inspired by beige machines and old terminals. Warm neutrals, soft accents and nothing pure black or pure white, so the screen rests the eye and the colour does the work.</p>
+    <form class="hero__find" action="#ports" role="search" id="hero-find">
+      <label class="ct-field hero__field"><span class="ct-field__label">Find your app</span><input class="ct-input" type="search" name="q" id="hero-q" placeholder="neovim, kitty, bat…" autocomplete="off" list="port-names"></label>
+      <div class="hero__enter"><button class="ct-keycap ct-keycap--275u" data-color="signal-tangerine" type="submit"><span class="ct-keycap__face"><span class="ct-keycap__legend">get comfy <span aria-hidden="true">↵</span></span></span></button></div>
+    </form>
+    <datalist id="port-names">
+<option value="Alacritty">
+<option value="bat">
+<option value="btop">
+<option value="fzf">
+<option value="Ghostty">
+<option value="Helix">
+<option value="iTerm2">
+<option value="JetBrains IDEs">
+<option value="Kitty">
+<option value="lazygit">
+<option value="Neovim">
+<option value="Obsidian">
+<option value="Omarchy">
+<option value="Starship">
+<option value="Sublime Text">
+<option value="tmux">
+<option value="VS Code">
+<option value="Warp">
+<option value="WezTerm">
+<option value="Windows Terminal">
+<option value="Zed">
+    </datalist>
+    <a class="hero__sticker" href="#palette"><span class="ct-sticker ct-sticker--rotulo ct-sticker--brillo ct-sticker--izq">explore the palette ↓</span></a>
+  </div>
+  <div class="hero__art">
+    <div class="mac">
+      <div class="ct-case" data-disk="signal-tangerine">
+        <div class="ct-screen">
+          <p class="ct-screen__big">get comfy.</p>
+          <p class="ct-screen__line ct-screen__muted"># warming up the phosphor</p>
+          <p class="ct-screen__line">$ comfytosh --flavor screen</p>
+          <p class="ct-screen__line ct-screen__amber">21 ports · 35 colours</p>
+          <p class="ct-screen__line ct-screen__bright">$ <span class="ct-cursor"></span></p>
+        </div>
+      </div>
+      <span class="ct-sticker ct-sticker--rotulo ct-sticker--menta ct-sticker--der mac__label">v0.1</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Flavors ──────────────────────────────────────────── -->
+<section class="section" id="flavors" aria-labelledby="flavors-title">
+  <div class="section__head split">
+    <div>
+      <p class="eyebrow">two flavors, one machine</p>
+      <h2 class="title" id="flavors-title">Screen and Case</h2>
+      <p class="sub"><strong>Screen</strong> is the glass of the monitor: a dark, warm green-grey with phosphor ink. <strong>Case</strong> is the beige plastic around it, with the same hues pressed darker so every text colour still clears 4.5:1.</p>
+    </div>
+    <div class="flavor-pick">
+      <div class="ct-segment seg-bone" role="radiogroup" aria-label="Flavor in the preview">
+        <label><input type="radio" name="flavor" value="screen" checked><span>Screen</span></label>
+        <label><input type="radio" name="flavor" value="case"><span>Case</span></label>
+      </div>
+      <dl class="flavor-facts th" data-flavor="screen">
+        <div><dt>ground</dt><dd><i class="dot" style="background:var(--th-bg)"></i><span data-fact="ground">crt-gunmetal #282e2b</span></dd></div>
+        <div><dt>text</dt><dd><i class="dot" style="background:var(--th-ink)"></i><span data-fact="text">crt-mint #d6e8c8</span></dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="th stage" data-flavor="screen" id="preview">
+    <figure class="mon mon--editor">
+      <div class="ct-screen-frame"><div class="ct-screen mon__screen">
+        <div class="ed">
+          <div class="ed__tabs"><span class="ed__tab is-on">palette.ts</span><span class="ed__tab">README.md</span></div>
+          <div class="ed__code">
+            <div class="ln"><span class="n">1</span><span class="code"><span class="kw">import</span> <span class="op">{</span> flavors <span class="op">}</span> <span class="kw">from</span> <span class="st">"./comfytosh"</span><span class="op">;</span></span></div>
+            <div class="ln"><span class="n">2</span><span class="code"> </span></div>
+            <div class="ln"><span class="n">3</span><span class="code"><span class="cm">// pick the flavor that fits the room</span></span></div>
+            <div class="ln"><span class="n">4</span><span class="code"><span class="kw">export function</span> <span class="fn">pick</span><span class="op">(</span>name<span class="op">:</span> <span class="ty">string</span><span class="op">,</span> <span class="mt">min</span> <span class="op">=</span> <span class="nu">4.5</span><span class="op">)</span> <span class="op">{</span></span></div>
+            <div class="ln add"><span class="n"><b></b>5</span><span class="code">  <span class="kw">const</span> flavor <span class="op">=</span> flavors<span class="op">[</span>name<span class="op">];</span></span></div>
+            <div class="ln"><span class="n">6</span><span class="code">  <span class="kw">const</span> ratio<span class="op">:</span> <span class="ty">number</span> <span class="op">=</span> <span class="err st">"4.5"</span><span class="op">;</span></span></div>
+            <div class="hov"><span>error</span> Type 'string' is not assignable to type 'number'.</div>
+            <div class="ln"><span class="n">7</span><span class="code">  <span class="kw">if</span> <span class="op">(!</span>flavor<span class="op">)</span> <span class="kw">throw new</span> <span class="ty">Error</span><span class="op">(</span><span class="st">"unknown flavor"</span><span class="op">);</span></span></div>
+            <div class="ln cl mod"><span class="n"><b></b>8</span><span class="code">  <span class="kw">return</span> <span class="sel">flavor<span class="op">.</span><span class="pr">colors</span></span><span class="op">.</span><span class="fn">filter</span><span class="op">((</span>c<span class="op">)</span> <span class="op">=&gt;</span> c<span class="op">.</span><span class="pr">ratio</span> <span class="op">&gt;=</span> <span class="mt">min</span><span class="op">);</span><span class="cur"></span></span></div>
+            <div class="ln"><span class="n">9</span><span class="code"><span class="op">}</span></span></div>
+            <div class="ln"><span class="n">10</span><span class="code"> </span></div>
+            <div class="ln"><span class="n">11</span><span class="code"><span class="kw">const</span> count <span class="op">=</span> <span class="nu">2</span><span class="op">,</span> ready <span class="op">=</span> <span class="co">true</span><span class="op">,</span> note <span class="op">=</span> <span class="co">null</span><span class="op">;</span></span></div>
+            <div class="ln"><span class="n">12</span><span class="code"><span class="kw">export const</span> <span class="fn">Swatch</span> <span class="op">=</span> <span class="op">()</span> <span class="op">=&gt;</span> <span class="op">&lt;</span><span class="tg">span</span> <span class="pr">className</span><span class="op">=</span><span class="st">"swatch"</span> <span class="op">/&gt;;</span></span></div>
+            <div class="diff">
+              <div class="dr"><i>-</i>const ratio: number = 3.9;</div>
+              <div class="dm"><i>~</i>const ratio: number = "4.5";</div>
+              <div class="da"><i>+</i>const flavor = flavors[name];</div>
+            </div>
+          </div>
+          <div class="ed__stat"><span><span class="a">main*</span>  <span class="e">1 error</span>  <span class="w">1 warning</span></span><span>TypeScript  Ln 8, Col 50</span></div>
+        </div>
+      </div></div>
+      <figcaption><span class="mon__label">editor</span> palette.ts<span class="sr-only">. A code editor in Comfytosh Theme: syntax colours, a selection, find matches, a diagnostic and a diff.</span></figcaption>
+    </figure>
+    <figure class="mon mon--term">
+      <div class="ct-screen-frame"><div class="ct-screen mon__screen">
+<pre class="term"><span class="g b">comfy@mac</span> <span class="bl">~/theme</span> <span class="m">main*</span> <span class="y">$</span> ls -l
+drwxr-xr-x  <span class="bl b">docs/</span>
+-rwxr-xr-x  <span class="g">build.sh</span>
+lrwxr-xr-x  <span class="c">latest</span> -> v1
+-rw-r--r--  palette.json
+<span class="g b">comfy@mac</span> <span class="bl">~/theme</span> <span class="m">main*</span> <span class="y">$</span> git diff --stat
+ palette.json | 4 <span class="g">++</span><span class="r">--</span>
+<span class="g b">comfy@mac</span> <span class="bl">~/theme</span> <span class="m">main*</span> <span class="y">$</span> npm test
+ <span class="tag">PASS</span> contrast <span class="d">36 pairs at 4.5:1</span>
+ <span class="tag y">WARN</span> ansi-bright-black <span class="d">4.49:1</span>
+ <span class="tag r">FAIL</span> <span class="r">missing token</span> <span class="d">comfy-teal</span>
+ <span class="tag bl">INFO</span> <span class="sel">2 flavors</span> built
+<span class="g b">comfy@mac</span> <span class="bl">~/theme</span> <span class="m">main*</span> <span class="y">$</span> <span class="tcur"></span></pre>
+        <div class="ansi" aria-label="The 16 ANSI colours">
+          <i style="background:var(--th-ansi-black)" title="black"></i><i style="background:var(--th-ansi-red)" title="red"></i><i style="background:var(--th-ansi-green)" title="green"></i><i style="background:var(--th-ansi-yellow)" title="yellow"></i><i style="background:var(--th-ansi-blue)" title="blue"></i><i style="background:var(--th-ansi-magenta)" title="magenta"></i><i style="background:var(--th-ansi-cyan)" title="cyan"></i><i style="background:var(--th-ansi-white)" title="white"></i>
+          <i style="background:var(--th-ansi-bright-black)" title="bright black"></i><i style="background:var(--th-ansi-bright-red)" title="bright red"></i><i style="background:var(--th-ansi-bright-green)" title="bright green"></i><i style="background:var(--th-ansi-bright-yellow)" title="bright yellow"></i><i style="background:var(--th-ansi-bright-blue)" title="bright blue"></i><i style="background:var(--th-ansi-bright-magenta)" title="bright magenta"></i><i style="background:var(--th-ansi-bright-cyan)" title="bright cyan"></i><i style="background:var(--th-ansi-bright-white)" title="bright white"></i>
+        </div>
+      </div></div>
+      <figcaption><span class="mon__label">terminal</span> ~/theme<span class="sr-only">. A terminal session in Comfytosh Theme, followed by the 16 ANSI colours.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ── Palette ──────────────────────────────────────────── -->
+<section class="section" id="palette" aria-labelledby="palette-title">
+  <div class="section__head split">
+    <div>
+      <p class="eyebrow">35 named colours</p>
+      <h2 class="title" id="palette-title">The palette</h2>
+      <p class="sub">Seven families, each with a job. Ports use the roles in <code>palette.json</code>; the names are here for everything else. Press a key to copy its value, in the format you pick.</p>
+    </div>
+    <div class="palette-actions">
+      <div class="ct-segment seg-bone palette-format" role="radiogroup" aria-label="Colour format">
+        <label><input type="radio" name="fmt" value="hex" checked><span>HEX</span></label>
+        <label><input type="radio" name="fmt" value="rgb"><span>RGB</span></label>
+        <label><input type="radio" name="fmt" value="hsl"><span>HSL</span></label>
+      </div>
+      <div class="palette-keys">
+      <button class="ct-key" type="button" data-copy-format="css"><span data-ic="copy"></span>Copy as CSS</button>
+      <button class="ct-key" type="button" data-copy-format="scss"><span data-ic="copy"></span>Copy as SCSS</button>
+      <a class="ct-key" href="palette.json" download><span data-ic="download"></span>palette.json</a>
+      </div>
+    </div>
+  </div>
+  <div class="families">
+<section class="family"><header class="family__head"><h3>Case plastics</h3><p>The beige machine. Grounds of the Case flavor.</p></header><div class="chips"><div class="chip"><button class="chip__cap" style="--c:#ece7de" data-copy="#ece7de" data-hex="#ece7de" data-rgb="rgb(236, 231, 222)" data-hsl="hsl(39, 27%, 90%)" aria-label="Copy case-linen"></button><span class="chip__name">case-linen</span><span class="chip__hex">#ece7de</span></div><div class="chip"><button class="chip__cap" style="--c:#e3dac9" data-copy="#e3dac9" data-hex="#e3dac9" data-rgb="rgb(227, 218, 201)" data-hsl="hsl(39, 32%, 84%)" aria-label="Copy case-bone"></button><span class="chip__name">case-bone</span><span class="chip__hex">#e3dac9</span></div><div class="chip"><button class="chip__cap" style="--c:#c7c4bf" data-copy="#c7c4bf" data-hex="#c7c4bf" data-rgb="rgb(199, 196, 191)" data-hsl="hsl(38, 7%, 76%)" aria-label="Copy case-silver"></button><span class="chip__name">case-silver</span><span class="chip__hex">#c7c4bf</span></div><div class="chip"><button class="chip__cap" style="--c:#333333" data-copy="#333333" data-hex="#333333" data-rgb="rgb(51, 51, 51)" data-hsl="hsl(0, 0%, 20%)" aria-label="Copy case-graphite"></button><span class="chip__name">case-graphite</span><span class="chip__hex">#333333</span></div></div></section>
+<section class="family"><header class="family__head"><h3>Screen glass</h3><p>Cabinet and glass greys. Grounds of the Screen flavor.</p></header><div class="chips"><div class="chip"><button class="chip__cap" style="--c:#222623" data-copy="#222623" data-hex="#222623" data-rgb="rgb(34, 38, 35)" data-hsl="hsl(135, 6%, 14%)" aria-label="Copy crt-carbon"></button><span class="chip__name">crt-carbon</span><span class="chip__hex">#222623</span></div><div class="chip"><button class="chip__cap" style="--c:#282e2b" data-copy="#282e2b" data-hex="#282e2b" data-rgb="rgb(40, 46, 43)" data-hsl="hsl(150, 7%, 17%)" aria-label="Copy crt-gunmetal"></button><span class="chip__name">crt-gunmetal</span><span class="chip__hex">#282e2b</span></div><div class="chip"><button class="chip__cap" style="--c:#343b37" data-copy="#343b37" data-hex="#343b37" data-rgb="rgb(52, 59, 55)" data-hsl="hsl(146, 6%, 22%)" aria-label="Copy crt-charcoal"></button><span class="chip__name">crt-charcoal</span><span class="chip__hex">#343b37</span></div><div class="chip"><button class="chip__cap" style="--c:#3c4641" data-copy="#3c4641" data-hex="#3c4641" data-rgb="rgb(60, 70, 65)" data-hsl="hsl(150, 8%, 25%)" aria-label="Copy crt-iron"></button><span class="chip__name">crt-iron</span><span class="chip__hex">#3c4641</span></div><div class="chip"><button class="chip__cap" style="--c:#555d50" data-copy="#555d50" data-hex="#555d50" data-rgb="rgb(85, 93, 80)" data-hsl="hsl(97, 8%, 34%)" aria-label="Copy crt-ebony"></button><span class="chip__name">crt-ebony</span><span class="chip__hex">#555d50</span></div><div class="chip"><button class="chip__cap" style="--c:#7e8f85" data-copy="#7e8f85" data-hex="#7e8f85" data-rgb="rgb(126, 143, 133)" data-hsl="hsl(145, 7%, 53%)" aria-label="Copy crt-olive"></button><span class="chip__name">crt-olive</span><span class="chip__hex">#7e8f85</span></div><div class="chip"><button class="chip__cap" style="--c:#bac1b8" data-copy="#bac1b8" data-hex="#bac1b8" data-rgb="rgb(186, 193, 184)" data-hsl="hsl(107, 7%, 74%)" aria-label="Copy crt-ash"></button><span class="chip__name">crt-ash</span><span class="chip__hex">#bac1b8</span></div><div class="chip"><button class="chip__cap" style="--c:#d6e8c8" data-copy="#d6e8c8" data-hex="#d6e8c8" data-rgb="rgb(214, 232, 200)" data-hsl="hsl(94, 41%, 85%)" aria-label="Copy crt-mint"></button><span class="chip__name">crt-mint</span><span class="chip__hex">#d6e8c8</span></div></div></section>
+<section class="family"><header class="family__head"><h3>Phosphor greens</h3><p>The terminal glow: strings, success and the cursor.</p></header><div class="chips"><div class="chip"><button class="chip__cap" style="--c:#7cd3a2" data-copy="#7cd3a2" data-hex="#7cd3a2" data-rgb="rgb(124, 211, 162)" data-hsl="hsl(146, 50%, 66%)" aria-label="Copy phosphor-celadon"></button><span class="chip__name">phosphor-celadon</span><span class="chip__hex">#7cd3a2</span></div><div class="chip"><button class="chip__cap" style="--c:#a9dfbf" data-copy="#a9dfbf" data-hex="#a9dfbf" data-rgb="rgb(169, 223, 191)" data-hsl="hsl(144, 46%, 77%)" aria-label="Copy phosphor-soft"></button><span class="chip__name">phosphor-soft</span><span class="chip__hex">#a9dfbf</span></div><div class="chip"><button class="chip__cap" style="--c:#9bf5c5" data-copy="#9bf5c5" data-hex="#9bf5c5" data-rgb="rgb(155, 245, 197)" data-hsl="hsl(148, 82%, 78%)" aria-label="Copy phosphor-aqua"></button><span class="chip__name">phosphor-aqua</span><span class="chip__hex">#9bf5c5</span></div><div class="chip"><button class="chip__cap" style="--c:#c5f899" data-copy="#c5f899" data-hex="#c5f899" data-rgb="rgb(197, 248, 153)" data-hsl="hsl(92, 87%, 79%)" aria-label="Copy phosphor-lime"></button><span class="chip__name">phosphor-lime</span><span class="chip__hex">#c5f899</span></div></div></section>
+<section class="family"><header class="family__head"><h3>Amber</h3><p>The amber monitor and warm earth.</p></header><div class="chips"><div class="chip"><button class="chip__cap" style="--c:#e8d595" data-copy="#e8d595" data-hex="#e8d595" data-rgb="rgb(232, 213, 149)" data-hsl="hsl(46, 64%, 75%)" aria-label="Copy amber-custard"></button><span class="chip__name">amber-custard</span><span class="chip__hex">#e8d595</span></div><div class="chip"><button class="chip__cap" style="--c:#e59f71" data-copy="#e59f71" data-hex="#e59f71" data-rgb="rgb(229, 159, 113)" data-hsl="hsl(24, 69%, 67%)" aria-label="Copy amber-bronze"></button><span class="chip__name">amber-bronze</span><span class="chip__hex">#e59f71</span></div><div class="chip"><button class="chip__cap" style="--c:#8a716a" data-copy="#8a716a" data-hex="#8a716a" data-rgb="rgb(138, 113, 106)" data-hsl="hsl(13, 13%, 48%)" aria-label="Copy amber-taupe"></button><span class="chip__name">amber-taupe</span><span class="chip__hex">#8a716a</span></div></div></section>
+<section class="family"><header class="family__head"><h3>Signal</h3><p>The loudest colours. One per view.</p></header><div class="chips"><div class="chip"><button class="chip__cap" style="--c:#ff773d" data-copy="#ff773d" data-hex="#ff773d" data-rgb="rgb(255, 119, 61)" data-hsl="hsl(18, 100%, 62%)" aria-label="Copy signal-tangerine"></button><span class="chip__name">signal-tangerine</span><span class="chip__hex">#ff773d</span></div><div class="chip"><button class="chip__cap" style="--c:#df2935" data-copy="#df2935" data-hex="#df2935" data-rgb="rgb(223, 41, 53)" data-hsl="hsl(356, 74%, 52%)" aria-label="Copy signal-scarlet"></button><span class="chip__name">signal-scarlet</span><span class="chip__hex">#df2935</span></div><div class="chip"><button class="chip__cap" style="--c:#ff6b6b" data-copy="#ff6b6b" data-hex="#ff6b6b" data-rgb="rgb(255, 107, 107)" data-hsl="hsl(0, 100%, 71%)" aria-label="Copy signal-grapefruit"></button><span class="chip__name">signal-grapefruit</span><span class="chip__hex">#ff6b6b</span></div></div></section>
+<section class="family"><header class="family__head"><h3>Comfy cool hues</h3><p>Blue, purple, cyan and rose for a full syntax theme.</p></header><div class="chips"><div class="chip"><button class="chip__cap" style="--c:#8fb3dd" data-copy="#8fb3dd" data-hex="#8fb3dd" data-rgb="rgb(143, 179, 221)" data-hsl="hsl(212, 53%, 71%)" aria-label="Copy comfy-periwinkle"></button><span class="chip__name">comfy-periwinkle</span><span class="chip__hex">#8fb3dd</span></div><div class="chip"><button class="chip__cap" style="--c:#b9a3d9" data-copy="#b9a3d9" data-hex="#b9a3d9" data-rgb="rgb(185, 163, 217)" data-hsl="hsl(264, 42%, 75%)" aria-label="Copy comfy-lilac"></button><span class="chip__name">comfy-lilac</span><span class="chip__hex">#b9a3d9</span></div><div class="chip"><button class="chip__cap" style="--c:#7fcfd4" data-copy="#7fcfd4" data-hex="#7fcfd4" data-rgb="rgb(127, 207, 212)" data-hsl="hsl(184, 50%, 66%)" aria-label="Copy comfy-lagoon"></button><span class="chip__name">comfy-lagoon</span><span class="chip__hex">#7fcfd4</span></div><div class="chip"><button class="chip__cap" style="--c:#e594b4" data-copy="#e594b4" data-hex="#e594b4" data-rgb="rgb(229, 148, 180)" data-hsl="hsl(336, 61%, 74%)" aria-label="Copy comfy-rose"></button><span class="chip__name">comfy-rose</span><span class="chip__hex">#e594b4</span></div></div></section>
+<section class="family"><header class="family__head"><h3>Deep</h3><p>Darker twins that hold 4.5:1 on beige. Text on Case.</p></header><div class="chips"><div class="chip"><button class="chip__cap" style="--c:#ae3400" data-copy="#ae3400" data-hex="#ae3400" data-rgb="rgb(174, 52, 0)" data-hsl="hsl(18, 100%, 34%)" aria-label="Copy deep-tangerine"></button><span class="chip__name">deep-tangerine</span><span class="chip__hex">#ae3400</span></div><div class="chip"><button class="chip__cap" style="--c:#ac1a23" data-copy="#ac1a23" data-hex="#ac1a23" data-rgb="rgb(172, 26, 35)" data-hsl="hsl(356, 74%, 39%)" aria-label="Copy deep-scarlet"></button><span class="chip__name">deep-scarlet</span><span class="chip__hex">#ac1a23</span></div><div class="chip"><button class="chip__cap" style="--c:#22643f" data-copy="#22643f" data-hex="#22643f" data-rgb="rgb(34, 100, 63)" data-hsl="hsl(146, 49%, 26%)" aria-label="Copy deep-phosphor"></button><span class="chip__name">deep-phosphor</span><span class="chip__hex">#22643f</span></div><div class="chip"><button class="chip__cap" style="--c:#91491a" data-copy="#91491a" data-hex="#91491a" data-rgb="rgb(145, 73, 26)" data-hsl="hsl(24, 70%, 34%)" aria-label="Copy deep-bronze"></button><span class="chip__name">deep-bronze</span><span class="chip__hex">#91491a</span></div><div class="chip"><button class="chip__cap" style="--c:#4b5247" data-copy="#4b5247" data-hex="#4b5247" data-rgb="rgb(75, 82, 71)" data-hsl="hsl(98, 7%, 30%)" aria-label="Copy deep-ebony"></button><span class="chip__name">deep-ebony</span><span class="chip__hex">#4b5247</span></div><div class="chip"><button class="chip__cap" style="--c:#2f5f93" data-copy="#2f5f93" data-hex="#2f5f93" data-rgb="rgb(47, 95, 147)" data-hsl="hsl(211, 52%, 38%)" aria-label="Copy deep-periwinkle"></button><span class="chip__name">deep-periwinkle</span><span class="chip__hex">#2f5f93</span></div><div class="chip"><button class="chip__cap" style="--c:#6a4c97" data-copy="#6a4c97" data-hex="#6a4c97" data-rgb="rgb(106, 76, 151)" data-hsl="hsl(264, 33%, 45%)" aria-label="Copy deep-lilac"></button><span class="chip__name">deep-lilac</span><span class="chip__hex">#6a4c97</span></div><div class="chip"><button class="chip__cap" style="--c:#1d6368" data-copy="#1d6368" data-hex="#1d6368" data-rgb="rgb(29, 99, 104)" data-hsl="hsl(184, 56%, 26%)" aria-label="Copy deep-lagoon"></button><span class="chip__name">deep-lagoon</span><span class="chip__hex">#1d6368</span></div><div class="chip"><button class="chip__cap" style="--c:#8f3558" data-copy="#8f3558" data-hex="#8f3558" data-rgb="rgb(143, 53, 88)" data-hsl="hsl(337, 46%, 38%)" aria-label="Copy deep-rose"></button><span class="chip__name">deep-rose</span><span class="chip__hex">#8f3558</span></div></div></section>
+  </div>
+</section>
+
+<!-- ── Roles (the spec) ─────────────────────────────────── -->
+<section class="section" id="roles" aria-labelledby="roles-title">
+  <div class="section__head">
+    <p class="eyebrow">the spec for port makers</p>
+    <h2 class="title" id="roles-title">Roles</h2>
+    <p class="sub">Every port maps the app to these 53 roles, so a string is the same green in your editor, your terminal and your prompt. Text roles clear WCAG AA (4.5:1) on their ground in both flavors; the few that don't are fills, and say so.</p>
+  </div>
+  <div class="roles">
+<details class="role-group" open><summary><span class="role-group__title">Surfaces and text</span><span class="role-group__count">8 roles</span></summary><div class="role-table"><table><thead><tr><th scope="col">Role</th><th scope="col">Screen</th><th scope="col">Case</th></tr></thead><tbody><tr><th scope="row"><code>bg</code><span class="role__note">Editor and page background. Every text colour below is checked against it.</span></th><td><span class="role__sw" style="--c:#282e2b" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#282e2b">#282e2b</button><span class="role__prim">crt-gunmetal</span></td><td><span class="role__sw" style="--c:#e3dac9" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#e3dac9">#e3dac9</button><span class="role__prim">case-bone</span></td></tr><tr><th scope="row"><code>bg-raised</code><span class="role__note">Tabs, sidebars, panels and widgets.</span></th><td><span class="role__sw" style="--c:#343b37" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#343b37">#343b37</button><span class="role__prim">crt-charcoal</span></td><td><span class="role__sw" style="--c:#ece7de" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ece7de">#ece7de</button><span class="role__prim">case-linen</span></td></tr><tr><th scope="row"><code>bg-sunken</code><span class="role__note">Activity bar, status bar and wells.</span></th><td><span class="role__sw" style="--c:#222623" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#222623">#222623</button><span class="role__prim">crt-carbon</span></td><td><span class="role__sw" style="--c:#c7c4bf" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#c7c4bf">#c7c4bf</button><span class="role__prim">case-silver</span></td></tr><tr><th scope="row"><code>bg-overlay</code><span class="role__note">Menus, hover widgets and autocomplete. Pair with border-strong.</span></th><td><span class="role__sw" style="--c:#3c4641" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#3c4641">#3c4641</button><span class="role__prim">crt-iron</span></td><td><span class="role__sw" style="--c:#ece7de" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ece7de">#ece7de</button><span class="role__prim">case-linen</span></td></tr><tr><th scope="row"><code>border</code><span class="role__note">Decorative dividers. Never carries meaning on its own.</span></th><td><span class="role__sw" style="--c:#3c4641" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#3c4641">#3c4641</button><span class="role__prim">crt-iron</span></td><td><span class="role__sw" style="--c:#c7c4bf" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#c7c4bf">#c7c4bf</button><span class="role__prim">case-silver</span></td></tr><tr><th scope="row"><code>border-strong</code><span class="role__note">Outlines of controls and widgets.</span></th><td><span class="role__sw" style="--c:#7e8f85" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7e8f85">#7e8f85</button><span class="role__prim">crt-olive</span></td><td><span class="role__sw" style="--c:#555d50" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#555d50">#555d50</button><span class="role__prim">crt-ebony</span></td></tr><tr><th scope="row"><code>ink</code><span class="role__note">Main text and plain identifiers.</span></th><td><span class="role__sw" style="--c:#d6e8c8" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#d6e8c8">#d6e8c8</button><span class="role__prim">crt-mint</span><span class="role__ratio">10.71:1</span></td><td><span class="role__sw" style="--c:#282e2b" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#282e2b">#282e2b</button><span class="role__prim">crt-gunmetal</span><span class="role__ratio">9.99:1</span></td></tr><tr><th scope="row"><code>ink-muted</code><span class="role__note">Secondary text, line numbers, punctuation.</span></th><td><span class="role__sw" style="--c:#bac1b8" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#bac1b8">#bac1b8</button><span class="role__prim">crt-ash</span><span class="role__ratio">7.53:1</span></td><td><span class="role__sw" style="--c:#4b5247" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#4b5247">#4b5247</button><span class="role__prim">deep-ebony</span><span class="role__ratio">5.83:1</span></td></tr></tbody></table></div></details>
+<details class="role-group"><summary><span class="role-group__title">Interaction</span><span class="role-group__count">8 roles</span></summary><div class="role-table"><table><thead><tr><th scope="col">Role</th><th scope="col">Screen</th><th scope="col">Case</th></tr></thead><tbody><tr><th scope="row"><code>accent</code><span class="role__note">Primary action fill and the status-bar highlight. Dark on-accent ink on top.</span></th><td><span class="role__sw" style="--c:#ff773d" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ff773d">#ff773d</button><span class="role__prim">signal-tangerine</span></td><td><span class="role__sw" style="--c:#ff773d" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ff773d">#ff773d</button><span class="role__prim">signal-tangerine</span></td></tr><tr><th scope="row"><code>on-accent</code><span class="role__note">Text and icons on accent.</span></th><td><span class="role__sw" style="--c:#282e2b" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#282e2b">#282e2b</button><span class="role__prim">crt-gunmetal</span><span class="role__ratio">5.25:1</span></td><td><span class="role__sw" style="--c:#282e2b" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#282e2b">#282e2b</button><span class="role__prim">crt-gunmetal</span><span class="role__ratio">5.25:1</span></td></tr><tr><th scope="row"><code>accent-ink</code><span class="role__note">Links and accent text on bg.</span></th><td><span class="role__sw" style="--c:#ff773d" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ff773d">#ff773d</button><span class="role__prim">signal-tangerine</span><span class="role__ratio">5.25:1</span></td><td><span class="role__sw" style="--c:#ae3400" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ae3400">#ae3400</button><span class="role__prim">deep-tangerine</span><span class="role__ratio">4.60:1</span></td></tr><tr><th scope="row"><code>focus</code><span class="role__note">Focus ring: 2px, solid, offset from the control.</span></th><td><span class="role__sw" style="--c:#7cd3a2" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7cd3a2">#7cd3a2</button><span class="role__prim">phosphor-celadon</span><span class="role__ratio">7.72:1</span></td><td><span class="role__sw" style="--c:#ae3400" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ae3400">#ae3400</button><span class="role__prim">deep-tangerine</span><span class="role__ratio">4.60:1</span></td></tr><tr><th scope="row"><code>cursor</code><span class="role__note">Editor caret.</span></th><td><span class="role__sw" style="--c:#c5f899" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#c5f899">#c5f899</button><span class="role__prim">phosphor-lime</span><span class="role__ratio">11.39:1</span></td><td><span class="role__sw" style="--c:#ae3400" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ae3400">#ae3400</button><span class="role__prim">deep-tangerine</span><span class="role__ratio">4.60:1</span></td></tr><tr><th scope="row"><code>selection</code><span class="role__note">Selected text. Screen is a 22% celadon tint, Case a solid mint; text keeps its own colour on top.</span></th><td><span class="role__sw" style="--c:#7cd3a238" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7cd3a238">#7cd3a238</button><span class="role__prim">phosphor-celadon at 22%</span></td><td><span class="role__sw" style="--c:#d6e8c8" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#d6e8c8">#d6e8c8</button><span class="role__prim">crt-mint</span></td></tr><tr><th scope="row"><code>line-highlight</code><span class="role__note">The current line. Subtle on purpose.</span></th><td><span class="role__sw" style="--c:#ffffff0d" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ffffff0d">#ffffff0d</button><span class="role__prim">#ffffff at 5%</span></td><td><span class="role__sw" style="--c:#282e2b0d" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#282e2b0d">#282e2b0d</button><span class="role__prim">crt-gunmetal at 5%</span></td></tr><tr><th scope="row"><code>match</code><span class="role__note">Find matches. Screen is a 28% custard tint, Case solid custard under dark ink.</span></th><td><span class="role__sw" style="--c:#e8d59547" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#e8d59547">#e8d59547</button><span class="role__prim">amber-custard at 28%</span></td><td><span class="role__sw" style="--c:#e8d595" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#e8d595">#e8d595</button><span class="role__prim">amber-custard</span></td></tr></tbody></table></div></details>
+<details class="role-group"><summary><span class="role-group__title">Status and diff</span><span class="role-group__count">8 roles</span></summary><div class="role-table"><table><thead><tr><th scope="col">Role</th><th scope="col">Screen</th><th scope="col">Case</th></tr></thead><tbody><tr><th scope="row"><code>success</code><span class="role__note">Success text and icons. Always with a word or an icon.</span></th><td><span class="role__sw" style="--c:#7cd3a2" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7cd3a2">#7cd3a2</button><span class="role__prim">phosphor-celadon</span><span class="role__ratio">7.72:1</span></td><td><span class="role__sw" style="--c:#22643f" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#22643f">#22643f</button><span class="role__prim">deep-phosphor</span><span class="role__ratio">5.11:1</span></td></tr><tr><th scope="row"><code>warning</code><span class="role__note">Warning text and icons.</span></th><td><span class="role__sw" style="--c:#e59f71" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#e59f71">#e59f71</button><span class="role__prim">amber-bronze</span><span class="role__ratio">6.29:1</span></td><td><span class="role__sw" style="--c:#91491a" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#91491a">#91491a</button><span class="role__prim">deep-bronze</span><span class="role__ratio">4.77:1</span></td></tr><tr><th scope="row"><code>danger</code><span class="role__note">Error text, squiggles and icons.</span></th><td><span class="role__sw" style="--c:#ff6b6b" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ff6b6b">#ff6b6b</button><span class="role__prim">signal-grapefruit</span><span class="role__ratio">4.99:1</span></td><td><span class="role__sw" style="--c:#ac1a23" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ac1a23">#ac1a23</button><span class="role__prim">deep-scarlet</span><span class="role__ratio">5.17:1</span></td></tr><tr><th scope="row"><code>info</code><span class="role__note">Information text and icons.</span></th><td><span class="role__sw" style="--c:#8fb3dd" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#8fb3dd">#8fb3dd</button><span class="role__prim">comfy-periwinkle</span><span class="role__ratio">6.37:1</span></td><td><span class="role__sw" style="--c:#2f5f93" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#2f5f93">#2f5f93</button><span class="role__prim">deep-periwinkle</span><span class="role__ratio">4.76:1</span></td></tr><tr><th scope="row"><code>hint</code><span class="role__note">Hints and suggestions.</span></th><td><span class="role__sw" style="--c:#7fcfd4" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7fcfd4">#7fcfd4</button><span class="role__prim">comfy-lagoon</span><span class="role__ratio">7.77:1</span></td><td><span class="role__sw" style="--c:#1d6368" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#1d6368">#1d6368</button><span class="role__prim">deep-lagoon</span><span class="role__ratio">4.98:1</span></td></tr><tr><th scope="row"><code>diff-add-bg</code><span class="role__note">Added lines. A 16% tint; ink stays on top.</span></th><td><span class="role__sw" style="--c:#7cd3a229" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7cd3a229">#7cd3a229</button><span class="role__prim">phosphor-celadon at 16%</span></td><td><span class="role__sw" style="--c:#22643f26" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#22643f26">#22643f26</button><span class="role__prim">deep-phosphor at 15%</span></td></tr><tr><th scope="row"><code>diff-remove-bg</code><span class="role__note">Removed lines. A 16% tint.</span></th><td><span class="role__sw" style="--c:#ff6b6b29" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ff6b6b29">#ff6b6b29</button><span class="role__prim">signal-grapefruit at 16%</span></td><td><span class="role__sw" style="--c:#ac1a2326" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ac1a2326">#ac1a2326</button><span class="role__prim">deep-scarlet at 15%</span></td></tr><tr><th scope="row"><code>diff-change-bg</code><span class="role__note">Changed lines. A 16% tint.</span></th><td><span class="role__sw" style="--c:#8fb3dd29" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#8fb3dd29">#8fb3dd29</button><span class="role__prim">comfy-periwinkle at 16%</span></td><td><span class="role__sw" style="--c:#2f5f9326" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#2f5f9326">#2f5f9326</button><span class="role__prim">deep-periwinkle at 15%</span></td></tr></tbody></table></div></details>
+<details class="role-group" open><summary><span class="role-group__title">Syntax</span><span class="role-group__count">10 roles</span></summary><div class="role-table"><table><thead><tr><th scope="col">Role</th><th scope="col">Screen</th><th scope="col">Case</th></tr></thead><tbody><tr><th scope="row"><code>syntax-keyword</code><span class="role__note">Keywords: import, return, if.</span></th><td><span class="role__sw" style="--c:#b9a3d9" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#b9a3d9">#b9a3d9</button><span class="role__prim">comfy-lilac</span><span class="role__ratio">6.14:1</span></td><td><span class="role__sw" style="--c:#6a4c97" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#6a4c97">#6a4c97</button><span class="role__prim">deep-lilac</span><span class="role__ratio">4.89:1</span></td></tr><tr><th scope="row"><code>syntax-string</code><span class="role__note">Strings and template text.</span></th><td><span class="role__sw" style="--c:#7cd3a2" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7cd3a2">#7cd3a2</button><span class="role__prim">phosphor-celadon</span><span class="role__ratio">7.72:1</span></td><td><span class="role__sw" style="--c:#22643f" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#22643f">#22643f</button><span class="role__prim">deep-phosphor</span><span class="role__ratio">5.11:1</span></td></tr><tr><th scope="row"><code>syntax-function</code><span class="role__note">Function and method names.</span></th><td><span class="role__sw" style="--c:#8fb3dd" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#8fb3dd">#8fb3dd</button><span class="role__prim">comfy-periwinkle</span><span class="role__ratio">6.37:1</span></td><td><span class="role__sw" style="--c:#2f5f93" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#2f5f93">#2f5f93</button><span class="role__prim">deep-periwinkle</span><span class="role__ratio">4.76:1</span></td></tr><tr><th scope="row"><code>syntax-type</code><span class="role__note">Types, classes and interfaces.</span></th><td><span class="role__sw" style="--c:#e8d595" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#e8d595">#e8d595</button><span class="role__prim">amber-custard</span><span class="role__ratio">9.49:1</span></td><td><span class="role__sw" style="--c:#91491a" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#91491a">#91491a</button><span class="role__prim">deep-bronze</span><span class="role__ratio">4.77:1</span></td></tr><tr><th scope="row"><code>syntax-number</code><span class="role__note">Numbers.</span></th><td><span class="role__sw" style="--c:#ff773d" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ff773d">#ff773d</button><span class="role__prim">signal-tangerine</span><span class="role__ratio">5.25:1</span></td><td><span class="role__sw" style="--c:#ae3400" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ae3400">#ae3400</button><span class="role__prim">deep-tangerine</span><span class="role__ratio">4.60:1</span></td></tr><tr><th scope="row"><code>syntax-constant</code><span class="role__note">Booleans, null, enum members and escapes.</span></th><td><span class="role__sw" style="--c:#e594b4" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#e594b4">#e594b4</button><span class="role__prim">comfy-rose</span><span class="role__ratio">6.09:1</span></td><td><span class="role__sw" style="--c:#8f3558" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#8f3558">#8f3558</button><span class="role__prim">deep-rose</span><span class="role__ratio">5.37:1</span></td></tr><tr><th scope="row"><code>syntax-property</code><span class="role__note">Properties, attributes and object keys.</span></th><td><span class="role__sw" style="--c:#7fcfd4" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7fcfd4">#7fcfd4</button><span class="role__prim">comfy-lagoon</span><span class="role__ratio">7.77:1</span></td><td><span class="role__sw" style="--c:#1d6368" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#1d6368">#1d6368</button><span class="role__prim">deep-lagoon</span><span class="role__ratio">4.98:1</span></td></tr><tr><th scope="row"><code>syntax-tag</code><span class="role__note">Markup tags and selectors.</span></th><td><span class="role__sw" style="--c:#ff6b6b" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ff6b6b">#ff6b6b</button><span class="role__prim">signal-grapefruit</span><span class="role__ratio">4.99:1</span></td><td><span class="role__sw" style="--c:#ac1a23" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ac1a23">#ac1a23</button><span class="role__prim">deep-scarlet</span><span class="role__ratio">5.17:1</span></td></tr><tr><th scope="row"><code>syntax-operator</code><span class="role__note">Operators and punctuation: quiet on purpose.</span></th><td><span class="role__sw" style="--c:#bac1b8" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#bac1b8">#bac1b8</button><span class="role__prim">crt-ash</span><span class="role__ratio">7.53:1</span></td><td><span class="role__sw" style="--c:#4b5247" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#4b5247">#4b5247</button><span class="role__prim">deep-ebony</span><span class="role__ratio">5.83:1</span></td></tr><tr><th scope="row"><code>syntax-comment</code><span class="role__note">Comments. Same ink as operators; set them in italics to tell them apart.</span></th><td><span class="role__sw" style="--c:#bac1b8" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#bac1b8">#bac1b8</button><span class="role__prim">crt-ash</span><span class="role__ratio">7.53:1</span></td><td><span class="role__sw" style="--c:#4b5247" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#4b5247">#4b5247</button><span class="role__prim">deep-ebony</span><span class="role__ratio">5.83:1</span></td></tr></tbody></table></div></details>
+<details class="role-group"><summary><span class="role-group__title">Terminal</span><span class="role-group__count">19 roles</span></summary><div class="role-table"><table><thead><tr><th scope="col">Role</th><th scope="col">Screen</th><th scope="col">Case</th></tr></thead><tbody><tr><th scope="row"><code>terminal-bg</code><span class="role__note">Terminal ground. In Screen it is the darker glass, one step below the editor.</span></th><td><span class="role__sw" style="--c:#222623" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#222623">#222623</button><span class="role__prim">crt-carbon</span></td><td><span class="role__sw" style="--c:#ece7de" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ece7de">#ece7de</button><span class="role__prim">case-linen</span></td></tr><tr><th scope="row"><code>terminal-ink</code><span class="role__note">Default terminal text.</span></th><td><span class="role__sw" style="--c:#d6e8c8" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#d6e8c8">#d6e8c8</button><span class="role__prim">crt-mint</span><span class="role__ratio">11.86:1</span></td><td><span class="role__sw" style="--c:#282e2b" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#282e2b">#282e2b</button><span class="role__prim">crt-gunmetal</span><span class="role__ratio">11.25:1</span></td></tr><tr><th scope="row"><code>terminal-cursor</code><span class="role__note">Terminal cursor.</span></th><td><span class="role__sw" style="--c:#c5f899" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#c5f899">#c5f899</button><span class="role__prim">phosphor-lime</span><span class="role__ratio">12.60:1</span></td><td><span class="role__sw" style="--c:#ae3400" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ae3400">#ae3400</button><span class="role__prim">deep-tangerine</span><span class="role__ratio">5.18:1</span></td></tr><tr><th scope="row"><code>ansi-black</code><span class="role__note">ANSI 0. A slab for backgrounds: on Screen it is deliberately close to the ground.</span></th><td><span class="role__sw" style="--c:#3c4641" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#3c4641">#3c4641</button><span class="role__prim">crt-iron</span><span class="role__ratio">1.57:1</span></td><td><span class="role__sw" style="--c:#282e2b" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#282e2b">#282e2b</button><span class="role__prim">crt-gunmetal</span><span class="role__ratio">11.25:1</span></td></tr><tr><th scope="row"><code>ansi-red</code><span class="role__note">ANSI 1.</span></th><td><span class="role__sw" style="--c:#ff6b6b" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ff6b6b">#ff6b6b</button><span class="role__prim">signal-grapefruit</span><span class="role__ratio">5.53:1</span></td><td><span class="role__sw" style="--c:#ac1a23" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ac1a23">#ac1a23</button><span class="role__prim">deep-scarlet</span><span class="role__ratio">5.83:1</span></td></tr><tr><th scope="row"><code>ansi-green</code><span class="role__note">ANSI 2.</span></th><td><span class="role__sw" style="--c:#7cd3a2" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7cd3a2">#7cd3a2</button><span class="role__prim">phosphor-celadon</span><span class="role__ratio">8.54:1</span></td><td><span class="role__sw" style="--c:#22643f" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#22643f">#22643f</button><span class="role__prim">deep-phosphor</span><span class="role__ratio">5.76:1</span></td></tr><tr><th scope="row"><code>ansi-yellow</code><span class="role__note">ANSI 3.</span></th><td><span class="role__sw" style="--c:#e8d595" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#e8d595">#e8d595</button><span class="role__prim">amber-custard</span><span class="role__ratio">10.50:1</span></td><td><span class="role__sw" style="--c:#91491a" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#91491a">#91491a</button><span class="role__prim">deep-bronze</span><span class="role__ratio">5.38:1</span></td></tr><tr><th scope="row"><code>ansi-blue</code><span class="role__note">ANSI 4.</span></th><td><span class="role__sw" style="--c:#8fb3dd" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#8fb3dd">#8fb3dd</button><span class="role__prim">comfy-periwinkle</span><span class="role__ratio">7.05:1</span></td><td><span class="role__sw" style="--c:#2f5f93" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#2f5f93">#2f5f93</button><span class="role__prim">deep-periwinkle</span><span class="role__ratio">5.36:1</span></td></tr><tr><th scope="row"><code>ansi-magenta</code><span class="role__note">ANSI 5.</span></th><td><span class="role__sw" style="--c:#b9a3d9" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#b9a3d9">#b9a3d9</button><span class="role__prim">comfy-lilac</span><span class="role__ratio">6.79:1</span></td><td><span class="role__sw" style="--c:#6a4c97" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#6a4c97">#6a4c97</button><span class="role__prim">deep-lilac</span><span class="role__ratio">5.51:1</span></td></tr><tr><th scope="row"><code>ansi-cyan</code><span class="role__note">ANSI 6.</span></th><td><span class="role__sw" style="--c:#7fcfd4" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7fcfd4">#7fcfd4</button><span class="role__prim">comfy-lagoon</span><span class="role__ratio">8.60:1</span></td><td><span class="role__sw" style="--c:#1d6368" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#1d6368">#1d6368</button><span class="role__prim">deep-lagoon</span><span class="role__ratio">5.61:1</span></td></tr><tr><th scope="row"><code>ansi-white</code><span class="role__note">ANSI 7. On Case it is a mid grey: a fill, not text, as in other light themes.</span></th><td><span class="role__sw" style="--c:#bac1b8" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#bac1b8">#bac1b8</button><span class="role__prim">crt-ash</span><span class="role__ratio">8.33:1</span></td><td><span class="role__sw" style="--c:#7e8f85" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7e8f85">#7e8f85</button><span class="role__prim">crt-olive</span><span class="role__ratio">2.77:1</span></td></tr><tr><th scope="row"><code>ansi-bright-black</code><span class="role__note">ANSI 8. Dimmed text: 4.49:1 on crt-carbon, just under 4.5, so not for essential text in Screen.</span></th><td><span class="role__sw" style="--c:#7e8f85" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7e8f85">#7e8f85</button><span class="role__prim">crt-olive</span><span class="role__ratio">4.49:1</span></td><td><span class="role__sw" style="--c:#4b5247" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#4b5247">#4b5247</button><span class="role__prim">deep-ebony</span><span class="role__ratio">6.57:1</span></td></tr><tr><th scope="row"><code>ansi-bright-red</code><span class="role__note">ANSI 9. Same hue as ANSI 1: the bright slots reuse the colours, as the Catppuccin ports do.</span></th><td><span class="role__sw" style="--c:#ff6b6b" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ff6b6b">#ff6b6b</button><span class="role__prim">signal-grapefruit</span><span class="role__ratio">5.53:1</span></td><td><span class="role__sw" style="--c:#ac1a23" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#ac1a23">#ac1a23</button><span class="role__prim">deep-scarlet</span><span class="role__ratio">5.83:1</span></td></tr><tr><th scope="row"><code>ansi-bright-green</code><span class="role__note">ANSI 10, same as ANSI 2.</span></th><td><span class="role__sw" style="--c:#7cd3a2" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7cd3a2">#7cd3a2</button><span class="role__prim">phosphor-celadon</span><span class="role__ratio">8.54:1</span></td><td><span class="role__sw" style="--c:#22643f" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#22643f">#22643f</button><span class="role__prim">deep-phosphor</span><span class="role__ratio">5.76:1</span></td></tr><tr><th scope="row"><code>ansi-bright-yellow</code><span class="role__note">ANSI 11, same as ANSI 3.</span></th><td><span class="role__sw" style="--c:#e8d595" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#e8d595">#e8d595</button><span class="role__prim">amber-custard</span><span class="role__ratio">10.50:1</span></td><td><span class="role__sw" style="--c:#91491a" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#91491a">#91491a</button><span class="role__prim">deep-bronze</span><span class="role__ratio">5.38:1</span></td></tr><tr><th scope="row"><code>ansi-bright-blue</code><span class="role__note">ANSI 12, same as ANSI 4.</span></th><td><span class="role__sw" style="--c:#8fb3dd" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#8fb3dd">#8fb3dd</button><span class="role__prim">comfy-periwinkle</span><span class="role__ratio">7.05:1</span></td><td><span class="role__sw" style="--c:#2f5f93" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#2f5f93">#2f5f93</button><span class="role__prim">deep-periwinkle</span><span class="role__ratio">5.36:1</span></td></tr><tr><th scope="row"><code>ansi-bright-magenta</code><span class="role__note">ANSI 13, same as ANSI 5.</span></th><td><span class="role__sw" style="--c:#b9a3d9" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#b9a3d9">#b9a3d9</button><span class="role__prim">comfy-lilac</span><span class="role__ratio">6.79:1</span></td><td><span class="role__sw" style="--c:#6a4c97" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#6a4c97">#6a4c97</button><span class="role__prim">deep-lilac</span><span class="role__ratio">5.51:1</span></td></tr><tr><th scope="row"><code>ansi-bright-cyan</code><span class="role__note">ANSI 14, same as ANSI 6.</span></th><td><span class="role__sw" style="--c:#7fcfd4" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#7fcfd4">#7fcfd4</button><span class="role__prim">comfy-lagoon</span><span class="role__ratio">8.60:1</span></td><td><span class="role__sw" style="--c:#1d6368" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#1d6368">#1d6368</button><span class="role__prim">deep-lagoon</span><span class="role__ratio">5.61:1</span></td></tr><tr><th scope="row"><code>ansi-bright-white</code><span class="role__note">ANSI 15. On Case it is the lightest plastic grey: a fill only.</span></th><td><span class="role__sw" style="--c:#d6e8c8" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#d6e8c8">#d6e8c8</button><span class="role__prim">crt-mint</span><span class="role__ratio">11.86:1</span></td><td><span class="role__sw" style="--c:#c7c4bf" aria-hidden="true"></span><button class="role__val" type="button" data-copy="#c7c4bf">#c7c4bf</button><span class="role__prim">case-silver</span><span class="role__ratio">1.41:1</span></td></tr></tbody></table></div></details>
+  </div>
+</section>
+
+<!-- ── Ports ────────────────────────────────────────────── -->
+<section class="section" id="ports" aria-labelledby="ports-title">
+  <div class="section__head">
+    <p class="eyebrow">21 ports and counting</p>
+    <h2 class="title" id="ports-title">Ports</h2>
+    <p class="sub">Every port ships both flavors and is built from the same roles, so your editor, your terminal and your prompt read as one palette.</p>
+  </div>
+  <div class="ports__tools">
+    <label class="ct-field ports__search"><span class="ct-field__label">Find a port</span><input class="ct-input" type="search" id="port-search" placeholder="neovim, kitty, bat…" autocomplete="off"></label>
+    <div class="ports__filters" role="group" aria-label="Filter by kind">
+<button class="ct-pill ct-pill--tangerine" type="button" aria-pressed="true" data-filter="all">All <span class="count">21</span></button>
+<button class="ct-pill" type="button" aria-pressed="false" data-filter="editor">Editors <span class="count">6</span></button>
+<button class="ct-pill" type="button" aria-pressed="false" data-filter="terminal">Terminals <span class="count">7</span></button>
+<button class="ct-pill" type="button" aria-pressed="false" data-filter="cli">Command line <span class="count">6</span></button>
+<button class="ct-pill" type="button" aria-pressed="false" data-filter="app">Apps <span class="count">1</span></button>
+<button class="ct-pill" type="button" aria-pressed="false" data-filter="desktop">Desktops <span class="count">1</span></button>
+    </div>
+  </div>
+  <p class="ports__count" id="port-count" aria-live="polite">21 ports</p>
+  <div class="ports" id="port-grid">
+<article class="port" data-cat="terminal" data-search="alacritty alacritty terminals">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--phosphor-celadon)" aria-hidden="true">A</span>
+    <div><h3 class="port__name"><a href="https://alacritty.org">Alacritty</a></h3><span class="port__cat">Terminal</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy alacritty/*.toml to ~/.config/alacritty/themes/ and add it to general.import.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-alacritty.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/alacritty/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="cli" data-search="bat bat command line">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--amber-custard)" aria-hidden="true">B</span>
+    <div><h3 class="port__name"><a href="https://github.com/sharkdp/bat">bat</a></h3><span class="port__cat">Command line</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy bat/*.tmTheme to &quot;$(bat --config-dir)/themes&quot;, run bat cache --build and set --theme=&quot;comfytosh-screen&quot;.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-bat.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/bat/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="cli" data-search="btop btop command line">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--amber-custard)" aria-hidden="true">B</span>
+    <div><h3 class="port__name"><a href="https://github.com/aristocratos/btop">btop</a></h3><span class="port__cat">Command line</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy btop/*.theme to ~/.config/btop/themes/ and set color_theme = &quot;comfytosh-screen&quot; in btop.conf.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-btop.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/btop/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="cli" data-search="fzf fzf command line">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--amber-custard)" aria-hidden="true">F</span>
+    <div><h3 class="port__name"><a href="https://github.com/junegunn/fzf">fzf</a></h3><span class="port__cat">Command line</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Source fzf/comfytosh-screen.sh from your shell rc to set FZF_DEFAULT_OPTS.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-fzf.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/fzf/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="terminal" data-search="ghostty ghostty terminals">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--phosphor-celadon)" aria-hidden="true">G</span>
+    <div><h3 class="port__name"><a href="https://ghostty.org">Ghostty</a></h3><span class="port__cat">Terminal</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy ghostty/* to ~/.config/ghostty/themes/ and set theme = light:comfytosh-case,dark:comfytosh-screen.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-ghostty.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/ghostty/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="editor" data-search="helix helix editors">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--comfy-lilac)" aria-hidden="true">H</span>
+    <div><h3 class="port__name"><a href="https://helix-editor.com">Helix</a></h3><span class="port__cat">Editor</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy helix/themes/*.toml to ~/.config/helix/themes/ and set theme = &quot;comfytosh-screen&quot;.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-helix.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/helix/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="terminal" data-search="iterm2 iterm2 terminals">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--phosphor-celadon)" aria-hidden="true">I</span>
+    <div><h3 class="port__name"><a href="https://iterm2.com">iTerm2</a></h3><span class="port__cat">Terminal</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Settings, Profiles, Colors, Color Presets, Import, then pick the .itermcolors file.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-iterm2.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/iterm2/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="editor" data-search="jetbrains ides jetbrains editors">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--comfy-lilac)" aria-hidden="true">J</span>
+    <div><h3 class="port__name"><a href="https://www.jetbrains.com">JetBrains IDEs</a></h3><span class="port__cat">Editor</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Settings, Editor, Color Scheme, the gear icon, Import Scheme, then pick the .icls file.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-jetbrains.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/jetbrains/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="terminal" data-search="kitty kitty terminals">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--phosphor-celadon)" aria-hidden="true">K</span>
+    <div><h3 class="port__name"><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a></h3><span class="port__cat">Terminal</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy kitty/*.conf to ~/.config/kitty/themes/ and add include themes/comfytosh-screen.conf to kitty.conf.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-kitty.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/kitty/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="cli" data-search="lazygit lazygit command line">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--amber-custard)" aria-hidden="true">L</span>
+    <div><h3 class="port__name"><a href="https://github.com/jesseduffield/lazygit">lazygit</a></h3><span class="port__cat">Command line</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Merge the gui.theme block from lazygit/comfytosh-screen.yml into your lazygit config.yml.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-lazygit.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/lazygit/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="editor" data-search="neovim nvim editors">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--comfy-lilac)" aria-hidden="true">N</span>
+    <div><h3 class="port__name"><a href="https://neovim.io">Neovim</a></h3><span class="port__cat">Editor</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Put nvim/lua and nvim/colors in your config, then require(&quot;comfytosh&quot;).setup() and vim.cmd.colorscheme(&quot;comfytosh&quot;). It follows vim.o.background.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-nvim.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/nvim/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="app" data-search="obsidian obsidian apps">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--comfy-periwinkle)" aria-hidden="true">O</span>
+    <div><h3 class="port__name"><a href="https://obsidian.md">Obsidian</a></h3><span class="port__cat">App</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy the obsidian/ folder to .obsidian/themes/Comfytosh/ in your vault, then pick it under Appearance. Light mode is Case, dark mode is Screen.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-obsidian.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/obsidian/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="desktop" data-search="omarchy omarchy desktops">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--comfy-rose)" aria-hidden="true">O</span>
+    <div><h3 class="port__name"><a href="https://omarchy.org">Omarchy</a></h3><span class="port__cat">Desktop</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy omarchy/comfytosh-screen and omarchy/comfytosh-case to ~/.config/omarchy/themes/, then omarchy-theme-set comfytosh-screen.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-omarchy.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/omarchy/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="cli" data-search="starship starship command line">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--amber-custard)" aria-hidden="true">S</span>
+    <div><h3 class="port__name"><a href="https://starship.rs">Starship</a></h3><span class="port__cat">Command line</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Paste the palette tables into starship.toml and set palette = &quot;comfytosh_screen&quot;.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-starship.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/starship/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="editor" data-search="sublime text sublime editors">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--comfy-lilac)" aria-hidden="true">S</span>
+    <div><h3 class="port__name"><a href="https://www.sublimetext.com">Sublime Text</a></h3><span class="port__cat">Editor</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy both files to Packages/User/, then pick the scheme in Preferences, Select Color Scheme.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-sublime.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/sublime/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="cli" data-search="tmux tmux command line">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--amber-custard)" aria-hidden="true">T</span>
+    <div><h3 class="port__name"><a href="https://github.com/tmux/tmux">tmux</a></h3><span class="port__cat">Command line</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Save the files in your config and add source-file ~/.config/tmux/comfytosh-screen.conf to tmux.conf.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-tmux.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/tmux/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="editor" data-search="vs code vscode editors cursor windsurf vscodium">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--comfy-lilac)" aria-hidden="true">V</span>
+    <div><h3 class="port__name"><a href="https://code.visualstudio.com">VS Code</a></h3><span class="port__cat">Editor</span></div></div>
+  <p class="port__also">Also Cursor, Windsurf, VSCodium</p>
+  <details class="port__how"><summary>How to install</summary><p>Copy the vscode/ folder to ~/.vscode/extensions/comfytosh.comfytosh-theme-0.1.0/, restart, then run Preferences: Color Theme.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-vscode.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/vscode/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="terminal" data-search="warp warp terminals">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--phosphor-celadon)" aria-hidden="true">W</span>
+    <div><h3 class="port__name"><a href="https://www.warp.dev">Warp</a></h3><span class="port__cat">Terminal</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy warp/*.yaml to ~/.warp/themes/, then pick the theme in Settings, Appearance, Themes.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-warp.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/warp/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="terminal" data-search="wezterm wezterm terminals">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--phosphor-celadon)" aria-hidden="true">W</span>
+    <div><h3 class="port__name"><a href="https://wezterm.org">WezTerm</a></h3><span class="port__cat">Terminal</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy wezterm/colors/ next to wezterm.lua, set config.color_scheme_dirs and config.color_scheme = &#x27;Comfytosh Screen&#x27;.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-wezterm.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/wezterm/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="terminal" data-search="windows terminal windows-terminal terminals">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--phosphor-celadon)" aria-hidden="true">W</span>
+    <div><h3 class="port__name"><a href="https://github.com/microsoft/terminal">Windows Terminal</a></h3><span class="port__cat">Terminal</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Paste the two objects from windows-terminal/comfytosh.json into schemes in settings.json.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-windows-terminal.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/windows-terminal/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port" data-cat="editor" data-search="zed zed editors">
+  <div class="port__head"><span class="port__mark" style="--pm:var(--comfy-lilac)" aria-hidden="true">Z</span>
+    <div><h3 class="port__name"><a href="https://zed.dev">Zed</a></h3><span class="port__cat">Editor</span></div></div>
+  
+  <details class="port__how"><summary>How to install</summary><p>Copy zed/comfytosh.json to ~/.config/zed/themes/, then pick Comfytosh Screen or Comfytosh Case.</p></details>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="downloads/comfytosh-zed.zip" download><span data-ic="download"></span>Download</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/zed/README.md">Install guide</a><span class="port__by">by <a href="https://github.com/vstrofago">@vstrofago</a></span></div>
+</article>
+<article class="port port--request" data-cat="all" data-search="">
+  <h3 class="port__name">Your tool here</h3>
+  <p>Comfytosh grows one port at a time. Ask for one, or build it with the guide.</p>
+  <div class="port__foot"><a class="ct-key ct-key--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml"><span data-ic="plus"></span>Request a port</a>
+    <a class="port__src" href="https://github.com/vstrofago/comfytosh/blob/main/CONTRIBUTING.md">Build it</a></div>
+</article>
+  </div>
+  <p class="ports__empty" id="port-empty" hidden>No port for that yet. <a href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml">Ask for it</a> or build it yourself.</p>
+  <div class="wanted">
+    <p class="wanted__label">Wanted: ports nobody has made yet</p>
+    <ul class="wanted__list">
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Vim"><span data-ic="plus"></span>Vim</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Emacs"><span data-ic="plus"></span>Emacs</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Xcode"><span data-ic="plus"></span>Xcode</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Zellij"><span data-ic="plus"></span>Zellij</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Slack"><span data-ic="plus"></span>Slack</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Discord"><span data-ic="plus"></span>Discord</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Firefox"><span data-ic="plus"></span>Firefox</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Chrome"><span data-ic="plus"></span>Chrome</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Raycast"><span data-ic="plus"></span>Raycast</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Hyprland"><span data-ic="plus"></span>Hyprland</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Waybar"><span data-ic="plus"></span>Waybar</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+GNOME+Terminal"><span data-ic="plus"></span>GNOME Terminal</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Konsole"><span data-ic="plus"></span>Konsole</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Foot"><span data-ic="plus"></span>Foot</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Rofi"><span data-ic="plus"></span>Rofi</a></li>
+<li><a class="ct-tag ct-tag--sm" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml&amp;title=%5BPort%5D%3A+Spotify"><span data-ic="plus"></span>Spotify</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── Contribute ───────────────────────────────────────── -->
+<section class="section" id="contribute" aria-labelledby="contribute-title">
+  <div class="contribute">
+    <div class="contribute__words">
+      <p class="eyebrow">open to everyone</p>
+      <h2 class="title" id="contribute-title">Make a port</h2>
+      <p class="sub">Comfytosh is open in the way Catppuccin and Dracula are: anyone can bring it to the tool they love. A port is a folder with both flavors, a README and a line in <code>ports.json</code>.</p>
+      <ol class="steps">
+        <li><b>Claim it.</b> Search the issues, then open a port request so nobody builds it twice.</li>
+        <li><b>Copy the template.</b> <code>template/</code> becomes <code>&lt;your-tool&gt;/</code>, named the way the tool is.</li>
+        <li><b>Use the roles.</b> Map the app to the roles in <code>palette.json</code>, never to raw hex you picked by eye.</li>
+        <li><b>Ship both flavors.</b> Comfytosh Screen and Comfytosh Case, with a screenshot of each.</li>
+        <li><b>Check and open a pull request.</b> <code>python3 scripts/check_ports.py</code> runs in CI too.</li>
+      </ol>
+      <div class="contribute__keys">
+        <a class="ct-key ct-key--dark" href="https://github.com/vstrofago/comfytosh/blob/main/CONTRIBUTING.md"><span data-ic="book"></span>Read the guide</a>
+        <a class="ct-key" href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml"><span data-ic="plus"></span>Request a port</a>
+        <a class="ct-key" href="https://github.com/vstrofago/comfytosh/issues/new?template=bug-report.yml"><span data-ic="issue-opened"></span>Report a bug</a>
+      </div>
+    </div>
+    <div class="contribute__screen">
+      <div class="ct-screen-frame">
+        <div class="ct-screen ct-screen--scanlines">
+          <p class="ct-screen__line ct-screen__muted"># a new port, start to finish</p>
+          <p class="ct-screen__line">$ git clone https://github.com/vstrofago/comfytosh</p>
+          <p class="ct-screen__line">$ cp -r template zellij</p>
+          <p class="ct-screen__line ct-screen__muted"># both flavors, roles from palette.json</p>
+          <p class="ct-screen__line">$ $EDITOR zellij/ ports.json</p>
+          <p class="ct-screen__line">$ python3 scripts/check_ports.py</p>
+          <p class="ct-screen__line ct-screen__bright">ok: 21 ports, both flavors each</p>
+          <p class="ct-screen__line">$ git push &amp;&amp; open a pull request</p>
+          <p class="ct-screen__line ct-screen__bright">$ <span class="ct-cursor"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <img src="assets/mark.svg" width="30" height="36" alt="">
+      <div><p class="foot__name">Comfytosh Theme</p><p class="foot__tag">do more, get comfy</p></div>
+    </div>
+    <nav class="foot__cols" aria-label="Footer">
+      <div><p class="foot__head">Theme</p><ul>
+        <li><a href="#flavors">Flavors</a></li><li><a href="#palette">Palette</a></li><li><a href="#roles">Roles</a></li><li><a href="#ports">Ports</a></li>
+      </ul></div>
+      <div><p class="foot__head">Contribute</p><ul>
+        <li><a href="https://github.com/vstrofago/comfytosh/blob/main/CONTRIBUTING.md">Contributing guide</a></li><li><a href="https://github.com/vstrofago/comfytosh/tree/main/template">Port template</a></li><li><a href="https://github.com/vstrofago/comfytosh/issues/new?template=port-request.yml">Request a port</a></li><li><a href="https://github.com/vstrofago/comfytosh/issues/new?template=bug-report.yml">Report a bug</a></li>
+      </ul></div>
+      <div><p class="foot__head">Project</p><ul>
+        <li><a href="https://github.com/vstrofago/comfytosh">GitHub</a></li><li><a href="palette.json" download>palette.json</a></li><li><a href="ports.json">ports.json</a></li><li><a href="https://github.com/vstrofago/comfytosh/blob/main/LICENSE">MIT license</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <p class="foot__print">Built with the Comfytosh design system · fonts: Geist, Geist Mono, Geist Pixel and IBM Plex Serif (SIL OFL 1.1), M PLUS Rounded 1c</p>
+  <div class="foot__wall">
+    <picture>
+      <source media="(max-width: 640px)" srcset="assets/wallpapers/wallpaper-mobile.webp" width="1080" height="1920">
+      <img src="assets/wallpapers/wallpaper-desktop.webp" width="2400" height="1350" alt="Keycaps on a green cutting mat spelling do more, get comfy: one of the Comfytosh wallpapers." loading="lazy" decoding="async">
+    </picture>
+    <a class="ct-key foot__wallkey" href="https://github.com/vstrofago/comfytosh/tree/main/wallpapers"><span data-ic="download"></span>Get the wallpapers</a>
+  </div>
+</footer>
+
+<script src="vendor/comfytosh/comfytosh.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
